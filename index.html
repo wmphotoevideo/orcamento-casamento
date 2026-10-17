@@ -1,0 +1,645 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Orçamento Wanderson Miranda</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap">
+<style>
+/* Layout: palco com a foto de capa de um lado (fixo no desktop, faixa no celular) e o orçamento em etapas do outro. */
+:root{
+  --bg:#F5F4F2; --surface:#FFFFFF; --ink:#1D1C1B; --muted:#67635E; --line:#DEDAD4;
+  --accent:#7E5F34; --on-accent:#FFFFFF; --accent-soft:#EFE8DC; --on-ink:#F5F4F2; --danger:#A33A2B;
+  --photo-ink:#FFFFFF; --photo-shade:rgba(15,12,10,.62);
+  --f-display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --f-body:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#141312; --surface:#1D1B1A; --ink:#F1EEEA; --muted:#A8A39C; --line:#35322F;
+    --accent:#CBA76E; --on-accent:#141312; --accent-soft:#2A241B; --on-ink:#141312; --danger:#E08A7A;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141312; --surface:#1D1B1A; --ink:#F1EEEA; --muted:#A8A39C; --line:#35322F;
+  --accent:#CBA76E; --on-accent:#141312; --accent-soft:#2A241B; --on-ink:#141312; --danger:#E08A7A;
+  color-scheme:dark;
+}
+:root.hero{
+  --bg:#0B0A09; --surface:#16130F; --ink:#F3EEE6; --muted:#B3AA9D; --line:#2E2922;
+  --accent:#CBA76E; --on-accent:#141312; --accent-soft:#2A241B; --on-ink:#141312; --danger:#E08A7A;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{min-height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+button,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3,p,ul,dl,dd,fieldset{margin:0;padding:0}
+fieldset{border:0;min-width:0}
+ul{list-style:none}
+
+.shell{display:grid;grid-template-columns:minmax(0,1fr);grid-template-areas:"top" "stage" "main";min-height:100%}
+@media (min-width:900px){
+  .shell{grid-template-columns:minmax(300px,5fr) minmax(0,6fr);grid-template-rows:auto 1fr;grid-template-areas:"stage top" "stage main";min-height:100dvh}
+  .stage{position:sticky;top:0;height:100dvh;align-self:start}
+}
+
+/* Cabeçalho */
+.top{grid-area:top;background:#0B0A09;border-bottom:1px solid #2E2922;color:#F3EEE6;--ink:#F3EEE6;--accent:#CBA76E;--accent-soft:#2A241B;--line:#2E2922}
+.top-in{width:min(100%,680px);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding-block:14px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left}
+.brand-logo{height:46px;width:auto;display:block;max-width:100%}
+@media (max-width:400px){.brand-logo{height:40px}}
+.menu-btn{display:inline-flex;align-items:center;gap:10px;background:none;border:1px solid var(--accent);border-radius:999px;padding:8px 16px;cursor:pointer;font-size:.9rem;letter-spacing:.04em}
+.menu-btn:hover{background:var(--accent-soft)}
+.burger{display:flex;flex-direction:column;gap:4px}
+.burger i{display:block;width:16px;height:1.5px;background:var(--ink)}
+
+/* Foto */
+.stage{grid-area:stage;position:relative;overflow:hidden;background:var(--line);height:clamp(210px,56vw,340px)}
+@media (min-width:900px){.stage{height:100dvh}}
+.stage img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block;max-width:none}
+@media (max-width:899px){.stage img{width:132%;object-position:0 56%}}
+.stage::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(to top,var(--photo-shade),transparent);pointer-events:none}
+.stage-cap{position:absolute;z-index:1;left:max(24px,env(safe-area-inset-left,0px));bottom:26px;color:var(--photo-ink);display:flex;flex-direction:column;align-items:flex-start}
+.stage-cap span{font-size:.68rem;letter-spacing:.32em;text-transform:uppercase}
+.stage-cap .cap-rule{width:48px;height:1px;background:#CBA76E;margin:14px 0 12px}
+.stage-cap b{font-family:var(--f-display);font-weight:500;font-size:1.75rem;letter-spacing:.09em;text-transform:uppercase;line-height:1}
+@media (min-width:900px){.stage-cap{left:48px;bottom:48px}.stage-cap b{font-size:2.6rem}}
+
+/* Conteúdo */
+.main{grid-area:main;display:flex;flex-direction:column;min-width:0;position:relative}
+.wm-bg{position:absolute;right:0;bottom:0;width:min(46%,260px);height:auto;opacity:.07;pointer-events:none;z-index:0}
+@media (prefers-reduced-motion:no-preference){.wm-bg{animation:wmin 1.6s ease .5s both}@keyframes wmin{from{opacity:0}to{opacity:.07}}}
+.main-in{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;width:min(100%,680px);margin-inline:auto;padding-block:28px calc(var(--barh,0px) + 28px);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+#view{flex:1;display:flex;flex-direction:column;min-width:0}
+.prog{display:flex;flex-direction:column;gap:10px;margin-bottom:26px}
+.prog-label{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.segs{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.segs i{height:2px;background:var(--line);position:relative;overflow:hidden}
+.segs i::after{content:"";position:absolute;inset:0;background:var(--accent);transform-origin:left;transform:scaleX(0)}
+.segs i.on::after{transform:scaleX(1)}
+h1,h2{font-family:var(--f-display);font-weight:500;text-wrap:balance;letter-spacing:-.005em}
+h1{font-size:clamp(2.2rem,5vw,3.1rem);line-height:1.05}
+h2{font-size:clamp(1.9rem,4.4vw,2.5rem);line-height:1.08}
+h1:focus,h2:focus{outline:none}
+.lead{color:var(--muted);max-width:52ch;margin-top:12px}
+.head{margin-bottom:24px}
+
+/* Listas de escolha */
+.list{display:flex;flex-direction:column;gap:12px}
+.group-title{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:30px 0 12px}
+.group-title:first-of-type{margin-top:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.card:has(input:checked:not(:disabled)){border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.opt,.row{display:flex;align-items:flex-start;gap:14px;padding:16px 18px;cursor:pointer}
+.opt input,.row input{position:absolute;opacity:0;width:1px;height:1px}
+.dot,.box{width:20px;height:20px;border:1.5px solid var(--muted);flex:none;display:grid;place-items:center;margin-top:3px}
+.dot{border-radius:50%}
+.box{border-radius:5px}
+input:checked+.dot{border-color:var(--accent)}
+input:checked+.dot::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--accent)}
+input:checked+.box{background:var(--accent);border-color:var(--accent)}
+input:checked+.box::after{content:"";width:5px;height:10px;border:solid var(--on-accent);border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent);outline-offset:3px}
+.body{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.line{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.pkg-name{font-family:var(--f-display);font-weight:600;font-size:1.6rem;line-height:1.1}
+.price{font-variant-numeric:tabular-nums;font-weight:500;white-space:nowrap}
+.sub{color:var(--muted);font-size:.92rem}
+.tag{align-self:flex-start;margin-top:6px;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:2px 8px;border-radius:999px}
+.more{border-top:1px solid var(--line);padding:0 18px}
+.more summary{cursor:pointer;list-style:none;font-size:.85rem;color:var(--muted);padding:10px 0;display:flex;justify-content:space-between}
+.more summary::-webkit-details-marker{display:none}
+.more summary::after{content:"+";font-size:1.1rem;line-height:1}
+.more[open] summary::after{content:"–"}
+.more ul{padding:2px 0 16px;display:grid;gap:6px;font-size:.92rem}
+.more li{display:flex;gap:10px}
+.more li::before{content:"";width:5px;height:5px;background:var(--accent);border-radius:50%;margin-top:.55em;flex:none}
+
+.row-name{font-weight:500}
+.row-desc{color:var(--muted);font-size:.88rem}
+.row .price{padding-top:1px}
+.row.inc{cursor:default;background:transparent}
+.row.inc .box{opacity:.55}
+.row.inc .price{color:var(--accent);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+.note{font-size:.88rem;color:var(--muted);background:var(--accent-soft);border-radius:8px;padding:10px 14px;margin-bottom:12px}
+
+/* Formulário */
+.form{display:grid;gap:18px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.field input,.field textarea{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;width:100%;min-width:0}
+.field textarea{min-height:104px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent)}
+.err{color:var(--danger);font-size:.85rem}
+
+/* Resumo */
+.sum{display:grid;gap:0}
+.sum-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.sum-row dt{color:var(--muted)}
+.sum-row dd{text-align:right;font-variant-numeric:tabular-nums;min-width:0;overflow-wrap:anywhere}
+.sum-row.big dt{font-family:var(--f-display);font-weight:600;font-size:1.6rem;color:var(--ink)}
+.sum-row.big dd{font-family:var(--f-body);font-weight:500;font-size:1.45rem;color:var(--ink);font-variant-numeric:lining-nums tabular-nums}
+.sum-block{margin-top:26px}
+.sum-block h3{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:400;margin-bottom:4px}
+.pay-name{font-family:var(--f-display);font-weight:600;font-size:1.3rem;line-height:1.15}
+.pay-note{margin-top:14px;font-size:.88rem;color:var(--muted)}
+.pay{margin-top:26px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;display:grid;gap:8px;font-size:.92rem}
+.pay strong{font-weight:500}
+.pay p+p{color:var(--muted)}
+.side{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;align-items:center}
+.link-btn{background:none;border:0;padding:0;color:var(--accent);text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:.92rem}
+.msg{margin-top:16px}
+.msg summary{cursor:pointer;color:var(--muted);font-size:.88rem}
+.msg textarea{width:100%;min-height:200px;margin-top:10px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px;font-size:.9rem}
+
+/* Barra de ações */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--bg);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (min-width:900px){.bar{left:calc(100% * 5 / 11)}}
+.bar-in{width:min(100%,680px);margin-inline:auto;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px;
+  padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.bar .btn{padding:10px 20px;font-size:.9rem;min-width:0}
+.tot{display:flex;flex-direction:column;align-items:center;text-align:center;line-height:1.2;min-width:0}
+.tot span{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.tot strong{font-family:var(--f-body);font-weight:500;font-size:1.15rem;letter-spacing:-.01em;white-space:nowrap;font-variant-numeric:lining-nums tabular-nums}
+.tot strong.none{font-weight:400;font-size:.8rem;color:var(--muted);white-space:normal;line-height:1.2}
+.bar-in.last .tot{grid-column:2/4;align-items:flex-end;text-align:right}
+.bar .btn.send{grid-column:1/-1;width:100%;padding:13px 20px;border:0;color:#1A140C;
+  background:linear-gradient(135deg,#F6E7C1 0%,#E3C98F 48%,#CDAA6E 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.45)}
+.bar .btn.send:hover{filter:brightness(1.05)}
+.btn{border-radius:999px;padding:12px 24px;border:1px solid var(--ink);background:var(--ink);color:var(--on-ink);cursor:pointer;font-weight:500;letter-spacing:.03em;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn[disabled]{opacity:.35;cursor:not-allowed}
+
+/* Menu */
+.sheet{position:fixed;inset:0;z-index:30;background:var(--bg);overflow-y:auto;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.sheet-in{width:min(100%,680px);margin-inline:auto;padding-block:20px 40px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sheet-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+.nav{display:flex;flex-direction:column}
+.nav button{background:none;border:0;border-bottom:1px solid var(--line);text-align:left;padding:18px 0;cursor:pointer;
+  font-family:var(--f-display);font-weight:500;font-size:2rem;display:flex;justify-content:space-between;align-items:baseline}
+.nav button span{font-family:var(--f-body);font-size:.85rem;color:var(--muted)}
+.nav button:hover{color:var(--accent)}
+.faq details{border-bottom:1px solid var(--line);padding:16px 0}
+.faq summary{cursor:pointer;font-weight:500;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--accent);font-size:1.2rem;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--muted);margin-top:10px}
+.contact{display:grid;gap:18px}
+.contact div{display:flex;flex-direction:column;gap:2px;border-bottom:1px solid var(--line);padding-bottom:16px}
+.contact small{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.contact a{color:var(--accent)}
+.contact .val{user-select:all;overflow-wrap:anywhere}
+
+.welcome{margin-block:0 auto;padding-top:34px;display:flex;flex-direction:column;align-items:flex-start;width:100%}
+@media (min-width:900px){.welcome{margin-block:auto;padding-top:0}}
+.eyebrow{font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent)}
+.welcome .eyebrow{display:flex;align-items:center;gap:18px;width:100%}
+.welcome .eyebrow::after{content:"";flex:1;height:1px;background:var(--accent);opacity:.7}
+.welcome h1{font-size:clamp(1.9rem,6.4vw,2.7rem);line-height:1.12;margin-top:22px;max-width:none;font-weight:500}
+.welcome .lead{font-size:.95rem;line-height:1.7;margin-top:22px;max-width:34ch}
+.btn.cta{margin-top:34px;max-width:100%;padding:17px 28px;font-size:.92rem;letter-spacing:.06em;gap:16px;
+  background:linear-gradient(135deg,#F6E7C1 0%,#E3C98F 48%,#CDAA6E 100%);color:#1A140C;border:0;
+  box-shadow:0 10px 28px rgba(203,167,110,.22),inset 0 1px 0 rgba(255,255,255,.45)}
+.btn.cta:hover{filter:brightness(1.06)}
+.cta svg{width:26px;height:26px;flex:none}
+.cta .sep{width:1px;height:26px;background:rgba(26,20,12,.35);flex:none}
+.cta .arr{display:inline-block;width:20px;height:1.5px;background:currentColor;position:relative;flex:none}
+.cta .arr::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border:solid currentColor;border-width:1.5px 1.5px 0 0;transform:rotate(45deg)}
+@media (max-width:400px){.btn.cta{padding:16px 20px;gap:12px;font-size:.86rem;letter-spacing:.04em}}
+
+@media (prefers-reduced-motion:no-preference){
+  .card,.btn,.dot,.box,.menu-btn{transition:border-color .2s,box-shadow .2s,background-color .2s,opacity .2s,transform .2s}
+  .btn:not([disabled]):hover{transform:translateY(-1px)}
+  .btn:not([disabled]):active{transform:scale(.99)}
+  .cta .arr{transition:width .25s ease}
+  .cta:hover .arr{width:30px}
+  .card:hover{border-color:var(--muted)}
+  #view>*{animation:in .5s cubic-bezier(.2,.7,.2,1) both}
+  #view>*:nth-child(2){animation-delay:.05s}
+  #view>*:nth-child(3){animation-delay:.1s}
+  #view>*:nth-child(4){animation-delay:.15s}
+  #view>.welcome,#view>.list{animation:none}
+  .list>.card{animation:in .5s cubic-bezier(.2,.7,.2,1) both}
+  .list>.card:nth-child(1){animation-delay:.08s}
+  .list>.card:nth-child(2){animation-delay:.13s}
+  .list>.card:nth-child(3){animation-delay:.18s}
+  .list>.card:nth-child(4){animation-delay:.23s}
+  .list>.card:nth-child(5){animation-delay:.28s}
+  .list>.card:nth-child(6){animation-delay:.33s}
+  .list>.card:nth-child(7){animation-delay:.38s}
+  .welcome>*{animation:in .85s cubic-bezier(.2,.7,.2,1) both}
+  .welcome>*:nth-child(2){animation-delay:.12s}
+  .welcome>*:nth-child(3){animation-delay:.24s}
+  .welcome>*:nth-child(4){animation-delay:.36s}
+  .welcome>*:nth-child(5){animation-delay:.5s}
+  .stage img{animation:settle 1.9s cubic-bezier(.2,.6,.2,1) both}
+  .segs i.cur::after{animation:fill .7s cubic-bezier(.2,.7,.2,1) both}
+  input:checked+.box,input:checked+.dot{animation:bump .32s ease}
+  input:checked+.dot::after{animation:grow .26s cubic-bezier(.3,1.6,.5,1) both}
+  .err:not([hidden]){animation:in .25s ease both}
+  .more[open] ul{animation:in .3s ease both}
+  .sheet:not([hidden]){animation:sheetin .3s ease both}
+  @keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  @keyframes settle{from{transform:scale(1.07);opacity:.85}to{transform:none;opacity:1}}
+  @keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @keyframes bump{0%{transform:scale(1)}45%{transform:scale(1.18)}100%{transform:scale(1)}}
+  @keyframes grow{from{transform:scale(.2)}to{transform:scale(1)}}
+  @keyframes sheetin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+}
+@media (max-width:380px){
+  .bar-in{gap:8px}
+  .bar .btn{padding:9px 14px;font-size:.85rem}
+  .tot strong{font-size:1.02rem}
+}
+@media (max-width:899px){
+  .shell.compact .stage{display:none}
+}
+</style>
+
+<div class="shell">
+  <header class="top">
+    <div class="top-in">
+      <button class="brand" id="brandHome" type="button" aria-label="Voltar ao início">
+        <img class="brand-logo" src="logo.png" alt="Wanderson Miranda Fotografia" width="745" height="156">
+      </button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-haspopup="dialog">Menu <span class="burger" aria-hidden="true"><i></i><i></i></span></button>
+    </div>
+  </header>
+
+  <aside class="stage" aria-hidden="false">
+    <img src="cover.jpg" alt="Noiva com o véu ao vento, segurando um buquê de rosas brancas" width="1000" height="1499">
+    <div class="stage-cap"><span>Catálogo 2027</span><i class="cap-rule"></i><b>Casamento</b></div>
+  </aside>
+
+  <main class="main">
+    <img class="wm-bg" src="wm.png" alt="" aria-hidden="true" hidden>
+    <div class="bar"><div class="bar-in" id="bar"></div></div>
+    <div class="main-in"><div id="view"></div></div>
+  </main>
+</div>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Menu" hidden></div>
+
+<script>
+(function(){
+  var WA = '5521982826535';
+  var BRL = new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
+  var BRL0 = new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',minimumFractionDigits:0,maximumFractionDigits:0});
+  function fmt(n){ return Number.isInteger(n) ? BRL0.format(n) : BRL.format(n); }
+
+  var PKGS = [
+    {id:'luz', name:'Luz', price:1000, short:'Até 5h de cobertura · Fotografia', inc:[],
+     items:['Até 5h de cobertura','1 fotógrafo','Entrega online (link com todas as fotos)','Fotos editadas','Fotos ilimitadas']},
+    {id:'encanto', name:'Encanto', price:1599, short:'Até 7h de cobertura · Fotografia · Making of', inc:['making'],
+     items:['Até 7h de cobertura','1 fotógrafo','Entrega online (link com todas as fotos)','Fotos editadas','Making of']},
+    {id:'elegance', name:'Elegance', price:2290, short:'Até 7h · Fotografia · Making of · Pré-wedding', inc:['making','pre'],
+     items:['Até 7h de cobertura','1 fotógrafo','Entrega online (link com todas as fotos)','Fotos editadas','Making of','Pré-wedding']},
+    {id:'supremo', name:'Supremo', price:3590, short:'Até 7h · Fotografia · Making of · Pré-wedding · Álbum', inc:['making','pre','second'], album:'Álbum 20x30',
+     items:['Até 7h de cobertura','2 fotógrafos','Entrega online (link com todas as fotos)','Fotos editadas','Making of','Pré-wedding','Álbum 20x30']},
+    {id:'completo', name:'Completo', price:4790.99, tag:'Mais completo', short:'8h · Fotografia · Álbum · Filme completo e teaser', inc:['making','pre','second','pendrive','film'], album:'Álbum 30x60 com 40 páginas',
+     items:['8 horas de fotos','Fotos de cerimônia e recepção','Making of (foto)','Pré-wedding (foto)','2 fotógrafos','Pendrive','Galeria online','Álbum 30x60 com 40 páginas','Filme completo','Teaser com os melhores momentos']}
+  ];
+
+  var EXTRAS = [
+    {id:'film', g:'media', name:'Filmagem completa da festa + teaser', desc:'Filme completo e teaser com os melhores momentos', price:1400},
+    {id:'making', g:'media', name:'Making of', desc:'3 horas de antecedência, fotos em alta', price:600},
+    {id:'pre', g:'media', name:'Pré-wedding', desc:'Até 2h, fotos em alta resolução, galeria online', price:700},
+    {id:'second', g:'media', name:'Segundo fotógrafo', desc:'', price:499.90},
+    {id:'drone', g:'media', name:'Drone', desc:'', price:599.90},
+    {id:'slide', g:'media', name:'Slide show', desc:'', price:180},
+    {id:'pendrive', g:'media', name:'Pendrive personalizado', desc:'', price:100},
+    {id:'al_essencial', g:'album', name:'Álbum Linha Essencial', desc:'20x60 cm · 30 páginas · até 80 fotos', price:1000},
+    {id:'al_premium', g:'album', name:'Álbum Linha Premium', desc:'25x50 cm · 40 páginas · até 100 fotos', price:1300},
+    {id:'al_luxo', g:'album', name:'Álbum Linha Luxo', desc:'30x60 cm · 40 páginas · até 100 fotos · estojo com laser', price:1700},
+    {id:'al_replica', g:'album', name:'Álbum réplica', desc:'20x40 cm · 40 páginas · até 100 fotos', price:700}
+  ];
+  var ALBUMS3 = ['al_essencial','al_premium','al_luxo'];
+  var STEPS = ['Pacote','Extras','Álbuns','Seus dados','Enviar'];
+
+  var FAQ = [
+    ['Quantas horas estão incluídas no serviço?','Nosso serviço padrão vai de 5 a 8 horas de cobertura, o que geralmente é suficiente para cobrir desde os preparativos até a festa. Chegamos 1h antes da cerimônia.'],
+    ['Vocês oferecem sessão de pré-wedding (ensaio)?','Sim, oferecemos um ensaio externo que pode ser adicionado a qualquer pacote.'],
+    ['Quantos fotógrafos estarão presentes no dia?','Depende do pacote. Luz, Encanto e Elegance têm 1 fotógrafo. Supremo e Completo têm 2. Você também pode adicionar um segundo fotógrafo como extra.'],
+    ['Como funciona o pagamento?','Para reservar a data, peço a partir de R$ 400. O restante pode ser dividido em parcelas mensais, de no mínimo R$ 300 cada, até 20 dias antes do casamento. À vista, você tem 5% de desconto. Também aceito cartão de crédito, e a taxa é combinada comigo.'],
+    ['Em quanto tempo recebo as fotos?','O prazo de entrega das fotos editadas é de 30 a 40 dias após a festa.'],
+    ['Qual é o estilo das fotos?','Uma mistura de fotojornalismo e retratos criativos, capturando tanto os momentos espontâneos quanto as poses planejadas.'],
+    ['Podemos escolher as fotos do álbum?','Claro. Depois da entrega das fotos editadas, vocês poderão selecionar suas favoritas para o álbum.']
+  ];
+
+  var S = {step:-1, pkg:null, ex:new Set(), pay:'parc', f:{name:'',date:'',place:'',notes:''}, err:{}};
+  var $ = function(s){ return document.querySelector(s); };
+  function esc(s){ return String(s).replace(/[&<>"']/g,function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+
+  function pkgObj(){ return PKGS.find(function(p){ return p.id===S.pkg; }); }
+  function isInc(id){ var p=pkgObj(); return !!p && p.inc.indexOf(id)>-1; }
+  function paid(){ return EXTRAS.filter(function(e){ return S.ex.has(e.id) && !isInc(e.id); }); }
+  function total(){ var p=pkgObj(); var t=(p?p.price:0)+paid().reduce(function(a,e){ return a+e.price; },0); return Math.round(t*100)/100; }
+  function money(n){ return fmt(Math.round(n*100)/100); }
+  function fmtDate(v){ if(!v) return ''; var m=v.split('-'); return m.length===3 ? m[2]+'/'+m[1]+'/'+m[0] : v; }
+
+  /* Regras de pagamento (valores em centavos) */
+  var RESERVA_C=40000, MIN_PARC_C=30000, DESC_AVISTA=0.05, DIAS_ANTES=20;
+  function cf(c){ return fmt(c/100); }
+  function parseDate(v){ var m=(v||'').split('-'); return m.length===3 ? new Date(+m[0],+m[1]-1,+m[2]) : null; }
+  function addMonths(d,k){ var mo=d.getMonth()+k, last=new Date(d.getFullYear(),mo+1,0).getDate(); return new Date(d.getFullYear(),mo,Math.min(d.getDate(),last)); }
+  function dstr(d){ return String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+d.getFullYear(); }
+  function payPlan(){
+    var tC=Math.round(total()*100), resC=Math.min(RESERVA_C,tC), remC=tC-resC;
+    var avC=Math.round(tC*(1-DESC_AVISTA));
+    var pl={tC:tC,resC:resC,remC:remC,avC:avC,saveC:tC-avC,n:0,baseC:0,lastC:0,dl:null,close:false};
+    var ev=parseDate(S.f.date); if(!ev) return pl;
+    var dl=new Date(ev.getFullYear(),ev.getMonth(),ev.getDate()-DIAS_ANTES);
+    var today=new Date(); today.setHours(0,0,0,0);
+    pl.dl=dl;
+    if(dl<=today){ pl.close=true; return pl; }
+    var k=0; while(k<60 && addMonths(today,k+1)<=dl) k++;
+    var cap=Math.max(1,Math.floor(remC/MIN_PARC_C));
+    var n=k>0 ? Math.min(k,cap) : 1;
+    pl.n=n; pl.baseC=Math.floor(remC/n); pl.lastC=remC-pl.baseC*(n-1);
+    return pl;
+  }
+  function parcText(pl){
+    if(pl.close) return 'Reserva de '+cf(pl.resC)+'. Como a data está próxima, o restante é combinado diretamente comigo.';
+    if(pl.n===1) return 'Reserva de '+cf(pl.resC)+' e o restante ('+cf(pl.remC)+') até '+dstr(pl.dl)+'.';
+    return 'Reserva de '+cf(pl.resC)+' e mais '+pl.n+' parcelas mensais de '+cf(pl.baseC)+', até '+dstr(pl.dl)+'.'+(pl.lastC!==pl.baseC?' A última é de '+cf(pl.lastC)+'.':'');
+  }
+  function payLine(){
+    var pl=payPlan();
+    if(S.pay==='avista') return '*Pagamento:* À vista com 5% de desconto, '+cf(pl.avC);
+    if(S.pay==='cartao') return '*Pagamento:* Cartão de crédito (gostaria de saber a taxa)';
+    return '*Pagamento:* Parcelado. '+parcText(pl);
+  }
+
+  function prog(){
+    return '<div class="prog"><span class="prog-label">Etapa '+(S.step+1)+' de 5 · '+STEPS[S.step]+'</span><div class="segs">'+
+      STEPS.map(function(_,i){ return '<i class="'+(i<=S.step?'on':'')+(i===S.step?' cur':'')+'"></i>'; }).join('')+'</div></div>';
+  }
+
+  function stepPkg(){
+    return prog()+
+    '<div class="head"><h1 tabindex="-1">Monte seu orçamento</h1>'+
+    '<p class="lead">Escolha o pacote do seu casamento. Na próxima etapa você adiciona o que quiser e o pedido segue para o meu WhatsApp.</p></div>'+
+    '<p class="note">Reserve sua data a partir de '+cf(RESERVA_C)+' e divida o restante em parcelas mensais. À vista, você ganha 5% de desconto.</p>'+
+    '<fieldset class="list"><legend class="sr" style="position:absolute;left:-9999px">Pacotes de casamento</legend>'+
+    PKGS.map(function(p){
+      return '<div class="card"><label class="opt"><input type="radio" name="pkg" value="'+p.id+'"'+(S.pkg===p.id?' checked':'')+'><span class="dot"></span>'+
+        '<span class="body"><span class="line"><span class="pkg-name">'+p.name+'</span><span class="price">'+fmt(p.price)+'</span></span>'+
+        '<span class="sub">'+p.short+'</span>'+(p.tag?'<span class="tag">'+p.tag+'</span>':'')+'</span></label>'+
+        '<details class="more"><summary>O que inclui</summary><ul>'+p.items.map(function(i){ return '<li>'+i+'</li>'; }).join('')+'</ul></details></div>';
+    }).join('')+'</fieldset>';
+  }
+
+  function row(e){
+    var inc=isInc(e.id), on=S.ex.has(e.id)||inc;
+    return '<div class="card"><label class="row'+(inc?' inc':'')+'"><input type="checkbox" data-ex="1" value="'+e.id+'"'+(on?' checked':'')+(inc?' disabled':'')+'><span class="box"></span>'+
+      '<span class="body"><span class="row-name">'+e.name+'</span>'+(e.desc?'<span class="row-desc">'+e.desc+'</span>':'')+'</span>'+
+      '<span class="price">'+(inc?'Incluso':'+ '+fmt(e.price))+'</span></label></div>';
+  }
+  function stepWelcome(){
+    return '<div class="welcome">'+
+      '<span class="eyebrow">Orçamento de casamento</span>'+
+      '<h1 tabindex="-1">Cada momento<br>do seu grande dia,<br>eternizado com emoção.</h1>'+
+      '<p class="lead">Escolha o pacote, acrescente o que quiser e envie o pedido direto para o meu WhatsApp. Leva cerca de 2 minutos.</p>'+
+      '<button class="btn cta" type="button" data-act="start">'+
+        '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.1 4C9.4 4 4 9.3 4 15.9c0 2.2.6 4.2 1.7 6L4 28l6.3-1.6c1.7.9 3.7 1.5 5.8 1.5 6.6 0 12-5.3 12-11.9S22.7 4 16.1 4z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M12.3 10.2c-.4 0-.9.2-1.2.6-.5.6-.9 1.4-.7 2.4.5 2.8 3.7 6.3 7.2 7.6 1 .4 1.9.1 2.5-.4.4-.3.6-.8.6-1.2l-.1-.5-2.1-1.1-.5.1-.9 1-.3-.1c-1.6-.7-2.9-2-3.6-3.6l-.1-.3.9-.9.1-.5-1-2.2z" fill="currentColor"/></svg>'+
+        '<span class="sep" aria-hidden="true"></span><span>Solicite seu orçamento</span><span class="arr" aria-hidden="true"></span></button>'+
+    '</div>';
+  }
+  function stepExtras(){
+    var p=pkgObj();
+    return prog()+
+    '<div class="head"><h2 tabindex="-1">Filmagem e extras</h2>'+
+    '<p class="lead">Tudo aqui é opcional. O que já vem no pacote '+p.name+' aparece como incluso.</p></div>'+
+    '<div class="list">'+EXTRAS.filter(function(e){return e.g==='media';}).map(row).join('')+'</div>';
+  }
+  function stepAlbums(){
+    var p=pkgObj();
+    return prog()+
+    '<div class="head"><h2 tabindex="-1">Álbuns</h2>'+
+    '<p class="lead">Guarde suas melhores fotos em um álbum impresso. Você escolhe as fotos depois da entrega. Se preferir, é só pular esta etapa.</p></div>'+
+    (p.album?'<p class="note">O pacote '+p.name+' já inclui '+p.album+'. Os álbuns abaixo são adicionais.</p>':'')+
+    '<div class="list">'+EXTRAS.filter(function(e){return e.g==='album';}).map(row).join('')+'</div>';
+  }
+  function hasAlbum(){ return EXTRAS.some(function(e){ return e.g==='album' && S.ex.has(e.id); }); }
+
+  function stepData(){
+    var f=S.f, er=S.err;
+    var today=new Date(); var min=today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');
+    return prog()+
+    '<div class="head"><h2 tabindex="-1">Sobre o casamento</h2><p class="lead">Só o essencial para eu conferir a data e preparar a proposta.</p></div>'+
+    '<div class="form">'+
+      '<div class="field"><label for="f-name">Nome dos noivos</label><input id="f-name" type="text" autocomplete="name" placeholder="Ex.: Ana e Pedro" value="'+esc(f.name)+'" aria-describedby="e-name"><p class="err" id="e-name"'+(er.name?'':' hidden')+'>Informe o nome dos noivos.</p></div>'+
+      '<div class="field"><label for="f-date">Data do casamento</label><input id="f-date" type="date" min="'+min+'" value="'+esc(f.date)+'" aria-describedby="e-date"><p class="err" id="e-date"'+(er.date?'':' hidden')+'>Escolha a data do casamento.</p></div>'+
+      '<div class="field"><label for="f-place">Cidade ou local da cerimônia</label><input id="f-place" type="text" placeholder="Ex.: Rio de Janeiro, RJ" value="'+esc(f.place)+'"></div>'+
+      '<div class="field"><label for="f-notes">Observações <span style="text-transform:none;letter-spacing:0">(opcional)</span></label><textarea id="f-notes" placeholder="Horário da cerimônia, dúvidas, algo que queira me contar">'+esc(f.notes)+'</textarea></div>'+
+    '</div>';
+  }
+
+  function buildMsg(){
+    var p=pkgObj(), ex=paid(), t=total(), L=[];
+    L.push('Olá, Wanderson! Gostaria de solicitar um orçamento de casamento.','');
+    L.push('*Noivos:* '+S.f.name);
+    L.push('*Data:* '+fmtDate(S.f.date));
+    if(S.f.place) L.push('*Local:* '+S.f.place);
+    L.push('','*Pacote:* '+p.name+' ('+fmt(p.price)+')');
+    if(ex.length){ L.push('*Extras:*'); ex.forEach(function(e){ L.push('- '+e.name+' ('+fmt(e.price)+')'); }); }
+    else L.push('*Extras:* nenhum');
+    L.push('','*Investimento:* '+fmt(t));
+    L.push(payLine());
+    if(S.f.notes) L.push('','*Observações:* '+S.f.notes);
+    return L.join('\n');
+  }
+
+  function stepSummary(){
+    var p=pkgObj(), ex=paid(), t=total(), pl=payPlan();
+    return prog()+
+    '<div class="head"><h2 tabindex="-1">Confira seu pedido</h2><p class="lead">Se estiver tudo certo, toque em enviar. O WhatsApp abre com a mensagem pronta e você revisa antes de mandar.</p></div>'+
+    '<dl class="sum">'+
+      '<div class="sum-row"><dt>Pacote '+p.name+'</dt><dd>'+fmt(p.price)+'</dd></div>'+
+      ex.map(function(e){ return '<div class="sum-row"><dt>'+e.name+'</dt><dd>+ '+fmt(e.price)+'</dd></div>'; }).join('')+
+      '<div class="sum-row big"><dt>Investimento</dt><dd>'+fmt(t)+'</dd></div>'+
+    '</dl>'+
+    '<div class="sum-block"><h3>Forma de pagamento</h3><fieldset class="list"><legend style="position:absolute;left:-9999px">Forma de pagamento</legend>'+
+      '<div class="card"><label class="opt"><input type="radio" name="pay" value="parc"'+(S.pay==='parc'?' checked':'')+'><span class="dot"></span><span class="body"><span class="line"><span class="pay-name">Parcelado</span><span class="price">'+fmt(t)+'</span></span><span class="sub">'+parcText(pl)+'</span></span></label></div>'+
+      '<div class="card"><label class="opt"><input type="radio" name="pay" value="avista"'+(S.pay==='avista'?' checked':'')+'><span class="dot"></span><span class="body"><span class="line"><span class="pay-name">À vista</span><span class="price">'+cf(pl.avC)+'</span></span><span class="sub">5% de desconto: você economiza '+cf(pl.saveC)+'.</span><span class="tag">Melhor valor</span></span></label></div>'+
+      '<div class="card"><label class="opt"><input type="radio" name="pay" value="cartao"'+(S.pay==='cartao'?' checked':'')+'><span class="dot"></span><span class="body"><span class="line"><span class="pay-name">Cartão de crédito</span></span><span class="sub">A taxa é combinada comigo pelo WhatsApp.</span></span></label></div>'+
+    '</fieldset><p class="pay-note">Cada parcela mensal tem no mínimo R$ 300.</p></div>'+
+    '<div class="sum-block"><h3>Casamento</h3><dl class="sum">'+
+      '<div class="sum-row"><dt>Noivos</dt><dd>'+esc(S.f.name)+'</dd></div>'+
+      '<div class="sum-row"><dt>Data</dt><dd>'+fmtDate(S.f.date)+'</dd></div>'+
+      (S.f.place?'<div class="sum-row"><dt>Local</dt><dd>'+esc(S.f.place)+'</dd></div>':'')+
+      (S.f.notes?'<div class="sum-row"><dt>Observações</dt><dd>'+esc(S.f.notes)+'</dd></div>':'')+
+    '</dl></div>'+
+    '<p class="pay-note">Esta proposta vale por 2 meses. As fotos editadas chegam de 30 a 40 dias após a festa.</p>'+
+    '<div class="side"><button class="link-btn" type="button" data-act="copy">Copiar mensagem</button><span class="sub" id="copied" aria-live="polite"></span></div>'+
+    '<details class="msg" id="msgd"><summary>Ver mensagem</summary><textarea id="msgbox" readonly></textarea></details>'+
+    '<p class="sub" style="margin-top:18px">WhatsApp: (21) 98282-6535</p>';
+  }
+
+  var shown=0, raf=0;
+  function paintTotal(){
+    var el=$('#totVal'); if(!el) return;
+    cancelAnimationFrame(raf);
+    if(!pkgObj()){ el.className='none'; el.textContent='Escolha um pacote'; shown=0; return; }
+    el.className='';
+    var to=total(), from=shown; shown=to;
+    var reduce=window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduce || from===to){ el.textContent=fmt(to); return; }
+    var t0=null, dur=420;
+    function tick(ts){
+      if(t0===null) t0=ts;
+      var k=Math.min(1,(ts-t0)/dur), e=1-Math.pow(1-k,3);
+      el.textContent = k<1 ? BRL0.format(Math.round(from+(to-from)*e)) : fmt(to);
+      if(k<1) raf=requestAnimationFrame(tick);
+    }
+    raf=requestAnimationFrame(tick);
+  }
+  function syncBarH(){
+    var bar=$('.bar'), h=bar.hidden?0:bar.offsetHeight;
+    document.documentElement.style.setProperty('--barh',h+'px');
+  }
+  window.addEventListener('resize',syncBarH);
+  if(window.ResizeObserver) new ResizeObserver(syncBarH).observe($('.bar'));
+  function renderBar(){
+    $('.bar').hidden = S.step<0;
+    var b=$('#bar'), p=pkgObj();
+    b.className='bar-in'+(S.step===4?' last':'');
+    var back='<button class="btn ghost" type="button" data-act="back">Voltar</button>';
+    var tot='<div class="tot"><span>Investimento</span><strong id="totVal"></strong></div>';
+    var next='';
+    if(S.step===0) next='<button class="btn" type="button" data-act="next" id="nextBtn"'+(p?'':' disabled')+'>Continuar</button>';
+    else if(S.step===1) next='<button class="btn" type="button" data-act="next">Continuar</button>';
+    else if(S.step===2) next='<button class="btn" type="button" data-act="next" id="nextBtn">Continuar</button>';
+    else if(S.step===3) next='<button class="btn" type="button" data-act="next">Revisar</button>';
+    else if(S.step===4) next='<a class="btn send" id="waBtn" href="https://wa.me/'+WA+'?text='+encodeURIComponent(buildMsg())+'" target="_blank" rel="noopener">Enviar pelo WhatsApp</a>';
+    b.innerHTML=back+tot+next;
+    paintTotal();
+    syncBarH();
+  }
+  function updateBar(){
+    if(S.step>=4) return;
+    var n=$('#nextBtn');
+    if(n && S.step===0) n.disabled=!pkgObj();
+    paintTotal();
+  }
+
+  function render(focus){
+    var v=$('#view');
+    document.documentElement.classList.toggle('hero',S.step<0);
+    var sh=$('.shell'); if(sh) sh.classList.toggle('compact',S.step>=0);
+    var wmb=$('.wm-bg'); if(wmb) wmb.hidden=S.step>=0;
+    v.innerHTML=[stepWelcome,stepPkg,stepExtras,stepAlbums,stepData,stepSummary][S.step+1]();
+    if(S.step===4){ var mb=$('#msgbox'); if(mb) mb.value=buildMsg(); }
+    renderBar();
+    if(focus){ window.scrollTo({top:0}); var h=v.querySelector('h1,h2'); if(h) h.focus({preventScroll:true}); }
+  }
+  function go(n){ S.step=n; render(true); }
+
+  function validate(){
+    S.err={name:!S.f.name.trim(), date:!S.f.date};
+    var bad=S.err.name||S.err.date;
+    if(bad){
+      $('#e-name').hidden=!S.err.name; $('#e-date').hidden=!S.err.date;
+      (S.err.name?$('#f-name'):$('#f-date')).focus();
+    }
+    return !bad;
+  }
+
+  $('#view').addEventListener('change',function(e){
+    var t=e.target;
+    if(t.name==='pay'){ S.pay=t.value; var mb2=$('#msgbox'); if(mb2) mb2.value=buildMsg(); renderBar(); return; }
+    if(t.name==='pkg'){ S.pkg=t.value; pkgObj().inc.forEach(function(i){ S.ex.delete(i); }); updateBar(); }
+    else if(t.dataset && t.dataset.ex){
+      if(t.checked){
+        S.ex.add(t.value);
+        if(ALBUMS3.indexOf(t.value)>-1) ALBUMS3.forEach(function(a){
+          if(a!==t.value){ S.ex.delete(a); var o=document.querySelector('input[data-ex][value="'+a+'"]'); if(o) o.checked=false; }
+        });
+      } else S.ex.delete(t.value);
+      updateBar();
+    }
+  });
+  $('#view').addEventListener('input',function(e){
+    var m={'f-name':'name','f-date':'date','f-place':'place','f-notes':'notes'}[e.target.id];
+    if(!m) return;
+    S.f[m]=e.target.value;
+    if(S.err[m] && e.target.value.trim()){ S.err[m]=false; var el=$('#e-'+m); if(el) el.hidden=true; }
+  });
+  $('#view').addEventListener('click',function(e){
+    if(e.target.closest('[data-act="copy"]')) copyMsg();
+    if(e.target.closest('[data-act="start"]')) go(0);
+  });
+  $('#bar').addEventListener('click',function(e){
+    var b=e.target.closest('[data-act]'); if(!b) return;
+    if(b.dataset.act==='back') go(S.step-1);
+    else if(b.dataset.act==='next'){
+      if(S.step===0 && !S.pkg) return;
+      if(S.step===3 && !validate()) return;
+      go(S.step+1);
+    }
+  });
+
+  function copyMsg(){
+    var msg=buildMsg(), note=$('#copied');
+    function fallback(){ var d=$('#msgd'); d.open=true; var t=$('#msgbox'); t.value=msg; t.focus(); t.select(); if(note) note.textContent='Selecionei o texto. Copie e cole no WhatsApp.'; }
+    try{
+      navigator.clipboard.writeText(msg).then(function(){ if(note) note.textContent='Mensagem copiada.'; },fallback);
+    }catch(err){ fallback(); }
+  }
+
+  /* Menu */
+  var sheet=$('#sheet'), lastFocus=null;
+  function sheetHead(back){
+    return '<div class="sheet-top">'+(back?'<button class="link-btn" type="button" data-s="menu">← Menu</button>':'<span class="eyebrow">Menu</span>')+
+      '<button class="menu-btn" type="button" data-s="close" id="sheetClose">Fechar</button></div>';
+  }
+  function openSheet(view){
+    var h='';
+    if(view==='menu'){
+      h=sheetHead(false)+'<nav class="nav">'+
+        '<button type="button" data-s="home">Início<span>Montar orçamento</span></button>'+
+        '<button type="button" data-s="faq">Dúvidas frequentes</button>'+
+        '<button type="button" data-s="about">O fotógrafo</button>'+
+        '<button type="button" data-s="contact">Contato</button></nav>';
+    } else if(view==='faq'){
+      h=sheetHead(true)+'<h2 style="margin-bottom:18px">Dúvidas frequentes</h2><div class="faq">'+FAQ.map(function(q){ return '<details><summary>'+q[0]+'</summary><p>'+q[1]+'</p></details>'; }).join('')+'</div>';
+    } else if(view==='about'){
+      h=sheetHead(true)+'<h2 style="margin-bottom:14px">O fotógrafo</h2><p class="lead" style="margin-top:0;font-size:1.05rem">Sou fotógrafo especializado em casamentos e 15 anos, apaixonado por registrar momentos que contam histórias. Como marido e pai, entendemos o valor das memórias e a importância de eternizá-las com emoção.</p>';
+    } else if(view==='contact'){
+      h=sheetHead(true)+'<h2 style="margin-bottom:18px">Contato</h2><div class="contact">'+
+        '<div><small>WhatsApp</small><span class="val">(21) 98282-6535</span><a href="https://wa.me/'+WA+'" target="_blank" rel="noopener">Abrir conversa</a></div>'+
+        '<div><small>E-mail</small><span class="val">wmphotoevideo@gmail.com</span></div>'+
+        '<div><small>Instagram</small><a href="https://www.instagram.com/wandersonmirandafoto" target="_blank" rel="noopener">@wandersonmirandafoto</a></div>'+
+        '<div><small>Site</small><a href="https://www.wandersonmiranda.com.br" target="_blank" rel="noopener">www.wandersonmiranda.com.br</a></div></div>';
+    }
+    sheet.innerHTML='<div class="sheet-in">'+h+'</div>';
+    if(sheet.hidden){ lastFocus=document.activeElement; sheet.hidden=false; document.body.style.overflow='hidden'; }
+    sheet.scrollTop=0;
+    var c=$('#sheetClose'); if(c) c.focus();
+  }
+  function closeSheet(){ sheet.hidden=true; document.body.style.overflow=''; if(lastFocus&&lastFocus.focus) lastFocus.focus(); }
+  $('#menuBtn').addEventListener('click',function(){ openSheet('menu'); });
+  $('#brandHome').addEventListener('click',function(){ if(S.step!==-1) go(-1); else window.scrollTo({top:0}); });
+  sheet.addEventListener('click',function(e){
+    var b=e.target.closest('[data-s]'); if(!b) return;
+    var a=b.dataset.s;
+    if(a==='close') closeSheet();
+    else if(a==='home'){ closeSheet(); if(S.step!==-1) go(-1); }
+    else openSheet(a);
+  });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && !sheet.hidden) closeSheet(); });
+
+  render(false);
+})();
+</script>
+
+</body></html>
