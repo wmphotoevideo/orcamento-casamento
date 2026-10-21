@@ -334,8 +334,144 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
   .bar .btn{padding:9px 14px;font-size:.85rem}
   .tot strong{font-size:1.02rem}
 }
-@media (max-width:899px){
-  .shell.compact .stage{display:none}
+/* Área do Fotógrafo */
+.nav-admin{
+  background:rgba(203,167,110,.08)!important;
+  border:1px solid rgba(203,167,110,.28)!important;
+  border-radius:12px;
+  padding:16px 18px!important;
+  margin-top:16px;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  transition:all .2s ease;
+  width:100%;
+}
+.nav-admin:hover{
+  background:rgba(203,167,110,.16)!important;
+  border-color:var(--accent)!important;
+}
+.nav-admin-left{display:flex;flex-direction:column;gap:2px;text-align:left}
+.nav-admin-left span{font-family:var(--f-display);font-size:1.35rem;font-weight:600;color:var(--ink)}
+.nav-admin-left small{font-family:var(--f-body);font-size:.78rem;color:var(--muted);letter-spacing:.02em}
+.nav-admin-badge{
+  font-family:var(--f-body);font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  background:var(--accent-soft);color:var(--accent);border:1px solid rgba(203,167,110,.35);
+  padding:5px 10px;border-radius:999px;display:inline-flex;align-items:center;gap:5px;flex-shrink:0;
+}
+
+/* Card de Login */
+.adm-login-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:14px;
+  padding:26px 22px;box-shadow:0 8px 32px rgba(0,0,0,.08);margin-top:12px;
+}
+.adm-login-badge{
+  width:44px;height:44px;border-radius:50%;background:rgba(203,167,110,.14);
+  color:var(--accent);display:grid;place-items:center;margin-bottom:14px;
+}
+.adm-form{display:flex;flex-direction:column;gap:14px;margin-top:18px}
+.adm-form .field input{width:100%}
+
+/* Painel Geral */
+.adm-dash{display:flex;flex-direction:column;gap:18px}
+.adm-user-tag{
+  font-size:.75rem;font-weight:600;letter-spacing:.05em;padding:4px 10px;
+  border-radius:999px;background:var(--accent-soft);color:var(--accent);
+}
+.adm-logout-btn{font-size:.82rem;color:var(--muted);cursor:pointer;background:none;border:0;text-decoration:underline}
+.adm-logout-btn:hover{color:var(--ink)}
+
+.adm-head{display:flex;flex-direction:column;gap:14px;border-bottom:1px solid var(--line);padding-bottom:16px}
+.adm-tabs{display:flex;gap:8px;flex-wrap:wrap}
+.adm-tab{
+  padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);
+  color:var(--ink);font-size:.85rem;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:6px;
+  transition:all .15s ease;
+}
+.adm-tab:hover{border-color:var(--accent);color:var(--accent)}
+.adm-tab.on{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
+.adm-badge{
+  background:var(--accent);color:var(--on-accent);font-size:.7rem;font-weight:700;
+  padding:2px 7px;border-radius:999px;line-height:1;
+}
+
+/* Métricas do Dashboard */
+.adm-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:16px}
+.adm-stat-box{
+  background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;
+  display:flex;flex-direction:column;gap:3px;
+}
+.adm-stat-label{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.adm-stat-num{font-size:1.35rem;font-weight:700;color:var(--ink);font-variant-numeric:lining-nums tabular-nums}
+
+/* Barra de Filtros */
+.adm-filter-bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.adm-search-input{
+  flex:1;min-width:180px;padding:9px 12px;border:1px solid var(--line);border-radius:8px;
+  background:var(--surface);color:var(--ink);font-size:.85rem;
+}
+.adm-pill-filter{
+  padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;
+  color:var(--muted);font-size:.78rem;cursor:pointer;font-weight:500;
+}
+.adm-pill-filter.on{background:var(--accent-soft);color:var(--accent);border-color:var(--accent)}
+
+/* Cards de Leads */
+.adm-lead-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:12px;
+  padding:16px;display:flex;flex-direction:column;gap:12px;box-shadow:0 2px 10px rgba(0,0,0,.03);
+  margin-bottom:12px;transition:border-color .15s;
+}
+.adm-lead-card:hover{border-color:rgba(203,167,110,.5)}
+.adm-lead-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
+.adm-lead-name{font-size:1.15rem;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:6px}
+.adm-lead-time{font-size:.75rem;color:var(--muted)}
+
+.adm-status-tag{
+  font-size:.72rem;font-weight:600;padding:4px 9px;border-radius:999px;display:inline-flex;align-items:center;gap:5px;
+}
+.adm-status-tag.sent{background:rgba(46,125,50,.12);color:#2e7d32;border:1px solid rgba(46,125,50,.28)}
+.adm-status-tag.review{background:rgba(230,126,34,.12);color:#d35400;border:1px solid rgba(230,126,34,.28)}
+
+.adm-lead-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;font-size:.82rem}
+.adm-lead-grid span{color:var(--muted);display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em}
+.adm-lead-grid strong{color:var(--ink);font-weight:600}
+
+.adm-lead-details{
+  border-top:1px dashed var(--line);padding-top:12px;margin-top:4px;display:flex;flex-direction:column;gap:8px;font-size:.83rem;
+}
+.adm-lead-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.adm-btn-sm{
+  padding:6px 12px;border-radius:6px;font-size:.78rem;font-weight:500;cursor:pointer;
+  border:1px solid var(--line);background:var(--surface);color:var(--ink);display:inline-flex;align-items:center;gap:5px;
+  text-decoration:none;
+}
+.adm-btn-sm:hover{background:var(--line)}
+.adm-btn-sm.primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.adm-btn-sm.danger{color:#c0392b;border-color:rgba(192,57,43,.3)}
+.adm-btn-sm.danger:hover{background:rgba(192,57,43,.08)}
+
+/* Editor de Pacotes e Extras */
+.adm-sec{margin-bottom:28px}
+.adm-sec-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.adm-sec-head h3{margin:0;font-size:1.1rem;font-weight:600}
+.adm-item-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;
+  margin-bottom:10px;display:flex;flex-direction:column;gap:10px;
+}
+.adm-item-row{display:grid;grid-template-columns:1fr 130px;gap:10px}
+@media (max-width:500px){.adm-item-row{grid-template-columns:1fr}}
+.adm-item-card input, .adm-item-card textarea, .adm-item-card select{
+  width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font-size:.85rem;
+}
+.adm-item-card textarea{resize:vertical;min-height:68px;font-family:inherit}
+.adm-item-card label{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:3px}
+.adm-item-actions{display:flex;justify-content:space-between;align-items:center;padding-top:6px;border-top:1px dashed var(--line)}
+
+.adm-save-bar{
+  position:sticky;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:14px 0;
+  display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:20px;
+  box-shadow:0 -4px 16px rgba(0,0,0,.06);z-index:10;
 }
 </style>
 </head>
@@ -373,7 +509,7 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
   var BRL0 = new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',minimumFractionDigits:0,maximumFractionDigits:0});
   function fmt(n){ return Number.isInteger(n) ? BRL0.format(n) : BRL.format(n); }
 
-  var PKGS = [
+  var DEFAULT_PKGS = [
     {id:'luz', name:'Luz', price:1000, short:'Até 5h de cobertura · Fotografia', inc:[],
      items:['Até 5h de cobertura','1 fotógrafo','Entrega online (link com todas as fotos)','Fotos editadas','Fotos ilimitadas']},
     {id:'encanto', name:'Encanto', price:1599, short:'Até 7h de cobertura · Fotografia · Making of', inc:['making'],
@@ -386,7 +522,7 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
      items:['8 horas de fotos','Fotos de cerimônia e recepção','Making of (foto)','Pré-wedding (foto)','2 fotógrafos','Pendrive','Galeria online','Álbum 30x60 com 40 páginas','Filme completo','Teaser com os melhores momentos']}
   ];
 
-  var EXTRAS = [
+  var DEFAULT_EXTRAS = [
     {id:'film', g:'media', name:'Filmagem completa da festa + teaser', desc:'Filme completo e teaser com os melhores momentos', price:1400},
     {id:'making', g:'media', name:'Making of', desc:'3 horas de antecedência, fotos em alta', price:600},
     {id:'pre', g:'media', name:'Pré-wedding', desc:'Até 2h, fotos em alta resolução, galeria online', price:700},
@@ -400,6 +536,9 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
     {id:'al_luxo', g:'album', name:'Álbum Linha Luxo', desc:'30x60 cm · 40 páginas · até 100 fotos · estojo com laser', price:1700},
     {id:'al_replica', g:'album', name:'Álbum réplica', desc:'20x40 cm · 40 páginas · até 100 fotos', price:700}
   ];
+
+  var PKGS = JSON.parse(JSON.stringify(DEFAULT_PKGS));
+  var EXTRAS = JSON.parse(JSON.stringify(DEFAULT_EXTRAS));
   var ALBUMS3 = ['al_essencial','al_premium','al_luxo'];
   var STEPS = ['Pacote','Extras','Álbuns','Seus dados','Enviar'];
 
@@ -413,7 +552,7 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
     ['Podemos escolher as fotos do álbum?','Claro. Depois da entrega das fotos editadas, vocês poderão selecionar suas favoritas para o álbum.']
   ];
 
-  var S = {step:-1, pkg:null, ex:new Set(), pay:'parc', customN:null, f:{name:'',date:'',time:'',place:'',notes:''}, err:{}};
+  var S = {step:-1, pkg:null, ex:new Set(), pay:'parc', customN:null, f:{name:'',date:'',time:'',place:'',notes:''}, err:{}, leadId:null};
   var $ = function(s){ return document.querySelector(s); };
   function esc(s){ return String(s).replace(/[&<>"']/g,function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
 
@@ -736,6 +875,376 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
     return !bad;
   }
 
+  function saveLeadOnReview(){
+    if(!S.leadId){
+      S.leadId = 'lead_' + Date.now() + '_' + Math.random().toString(36).substr(2,7);
+    }
+    var p = pkgObj();
+    if(!p) return;
+    var ex = paid();
+    var t = total();
+    var pl = payPlan();
+
+    var leadData = {
+      id: S.leadId,
+      clientName: (S.f.name || '').trim(),
+      date: S.f.date || '',
+      time: S.f.time || '',
+      place: S.f.place || '',
+      notes: S.f.notes || '',
+      pkg: {
+        id: p.id,
+        name: p.name,
+        price: p.price,
+        short: p.short
+      },
+      extras: ex.map(function(e){
+        return { id: e.id, name: e.name, price: e.price, g: e.g };
+      }),
+      total: t,
+      pay: {
+        method: S.pay,
+        text: payLine(),
+        reserva: pl.resC / 100,
+        installments: pl.n,
+        monthly: pl.baseC / 100,
+        lastMonthly: pl.lastC / 100,
+        deadline: pl.dl ? dstr(pl.dl) : ''
+      },
+      status: 'Revisado',
+      waSent: false,
+      message: buildMsg(),
+      updatedAt: new Date().toISOString()
+    };
+
+    fetch('/api/leads', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(leadData)
+    }).catch(function(e){ console.warn('Erro ao salvar lead:', e); });
+  }
+
+  function updateLeadCurrentState(){
+    if(S.leadId && S.step===4){
+      saveLeadOnReview();
+    }
+  }
+
+  function markLeadWhatsAppSent(){
+    if(!S.leadId) return;
+    fetch('/api/leads/' + S.leadId, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        status: 'Enviou WhatsApp',
+        waSent: true,
+        waSentAt: new Date().toISOString()
+      })
+    }).catch(function(e){ console.warn('Erro ao atualizar status WhatsApp:', e); });
+  }
+
+  function loadConfig(){
+    fetch('/api/config')
+      .then(function(r){ return r.json(); })
+      .then(function(cfg){
+        var changed = false;
+        if(cfg && Array.isArray(cfg.packages) && cfg.packages.length > 0){
+          PKGS = cfg.packages;
+          changed = true;
+        }
+        if(cfg && Array.isArray(cfg.extras) && cfg.extras.length > 0){
+          EXTRAS = cfg.extras;
+          ALBUMS3 = EXTRAS.filter(function(e){ return e.g==='album'; }).map(function(e){ return e.id; });
+          changed = true;
+        }
+        if(changed && S.step >= 0){
+          render(false);
+        }
+      })
+      .catch(function(){});
+  }
+
+  function fmtRelTime(iso){
+    if(!iso) return '';
+    try{
+      var d = new Date(iso);
+      var now = new Date();
+      var diffSec = Math.floor((now - d) / 1000);
+      if(diffSec < 60) return 'Agora mesmo';
+      if(diffSec < 3600) return Math.floor(diffSec/60) + ' min atrás';
+      var day = String(d.getDate()).padStart(2,'0');
+      var mo = String(d.getMonth()+1).padStart(2,'0');
+      var yr = d.getFullYear();
+      var hr = String(d.getHours()).padStart(2,'0');
+      var mi = String(d.getMinutes()).padStart(2,'0');
+      if(diffSec < 86400) return 'Hoje às ' + hr + ':' + mi;
+      return day + '/' + mo + '/' + yr + ' às ' + hr + ':' + mi;
+    }catch(e){ return iso; }
+  }
+
+  /* Admin Auth & State */
+  function isAdminAuth(){
+    return sessionStorage.getItem('wm_adm_auth') === '1';
+  }
+  function setAdminAuth(val){
+    if(val) sessionStorage.setItem('wm_adm_auth', '1');
+    else sessionStorage.removeItem('wm_adm_auth');
+  }
+
+  var ADM = {
+    tab: 'leads', // 'leads' | 'config'
+    leads: [],
+    loading: false,
+    filter: 'all', // 'all' | 'wa' | 'review'
+    search: '',
+    expandedId: null,
+    editingPkgs: null,
+    editingExtras: null
+  };
+
+  function fetchLeads(cb){
+    ADM.loading = true;
+    fetch('/api/leads')
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        ADM.leads = Array.isArray(data) ? data : [];
+        ADM.loading = false;
+        if(cb) cb();
+      })
+      .catch(function(err){
+        ADM.loading = false;
+        console.warn('Erro ao carregar leads:', err);
+        if(cb) cb();
+      });
+  }
+
+  function syncEditingPkgsFromDom(){
+    if(!ADM.editingPkgs) return;
+    document.querySelectorAll('[data-pkg-field]').forEach(function(el){
+      var idx = parseInt(el.dataset.pkgIdx, 10);
+      var field = el.dataset.pkgField;
+      if(ADM.editingPkgs[idx] !== undefined){
+        if(field === 'price') ADM.editingPkgs[idx].price = parseFloat(el.value) || 0;
+        else if(field === 'items') ADM.editingPkgs[idx].items = el.value.split('\n').map(function(s){ return s.trim(); }).filter(Boolean);
+        else ADM.editingPkgs[idx][field] = el.value;
+      }
+    });
+    document.querySelectorAll('[data-ex-field]').forEach(function(el){
+      var idx = parseInt(el.dataset.exIdx, 10);
+      var field = el.dataset.exField;
+      if(ADM.editingExtras[idx] !== undefined){
+        if(field === 'price') ADM.editingExtras[idx].price = parseFloat(el.value) || 0;
+        else ADM.editingExtras[idx][field] = el.value;
+      }
+    });
+  }
+
+  function renderAdminLogin(){
+    return '<div class="sheet-top">'+
+      '<button class="link-btn" type="button" data-s="menu">← Menu</button>'+
+      '<button class="menu-btn" type="button" data-s="close" id="sheetClose">Fechar</button></div>'+
+      '<div class="adm-login-card">'+
+        '<div class="adm-login-badge"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>'+
+        '<span class="eyebrow" style="margin-bottom:4px">Área Restrita</span>'+
+        '<h2 style="margin:0 0 6px">Área do Fotógrafo</h2>'+
+        '<p class="lead" style="margin-top:0;font-size:.9rem;color:var(--muted)">Painel exclusivo para Wanderson Miranda gerenciar orçamentos salvos e editar pacotes do catálogo.</p>'+
+        '<form id="admLoginForm" class="adm-form" onsubmit="return false;">'+
+          '<div class="field">'+
+            '<label for="admUser">Usuário</label>'+
+            '<input type="text" id="admUser" autocomplete="username" placeholder="Wmsouza" required>'+
+          '</div>'+
+          '<div class="field">'+
+            '<label for="admPass">Senha</label>'+
+            '<input type="password" id="admPass" autocomplete="current-password" placeholder="••••••••" required>'+
+          '</div>'+
+          '<p class="err" id="admLoginErr" hidden>Usuário ou senha inválidos. Tente novamente.</p>'+
+          '<button class="btn send" type="submit" id="admLoginSubmit" style="margin-top:8px;width:100%">Entrar no Painel</button>'+
+        '</form>'+
+      '</div>';
+  }
+
+  function renderAdminDash(){
+    var sentCount = ADM.leads.filter(function(l){ return l.waSent; }).length;
+    var reviewCount = ADM.leads.filter(function(l){ return !l.waSent; }).length;
+    var pipelineTotal = ADM.leads.reduce(function(acc, l){ return acc + (l.total || 0); }, 0);
+
+    var filteredLeads = ADM.leads.filter(function(l){
+      if(ADM.filter === 'wa' && !l.waSent) return false;
+      if(ADM.filter === 'review' && l.waSent) return false;
+      if(ADM.search.trim()){
+        var q = ADM.search.toLowerCase();
+        var matchName = (l.clientName || '').toLowerCase().indexOf(q) > -1;
+        var matchDate = (l.date || '').toLowerCase().indexOf(q) > -1;
+        var matchPlace = (l.place || '').toLowerCase().indexOf(q) > -1;
+        var matchPkg = (l.pkg && l.pkg.name ? l.pkg.name : '').toLowerCase().indexOf(q) > -1;
+        if(!matchName && !matchDate && !matchPlace && !matchPkg) return false;
+      }
+      return true;
+    });
+
+    var tabContent = '';
+    if(ADM.tab === 'leads'){
+      tabContent = '<div class="adm-stats">'+
+        '<div class="adm-stat-box"><span class="adm-stat-label">Total Orçamentos</span><strong class="adm-stat-num">'+ADM.leads.length+'</strong></div>'+
+        '<div class="adm-stat-box"><span class="adm-stat-label">Enviaram WhatsApp</span><strong class="adm-stat-num" style="color:#2e7d32">'+sentCount+'</strong></div>'+
+        '<div class="adm-stat-box"><span class="adm-stat-label">Apenas Revisaram</span><strong class="adm-stat-num" style="color:#d35400">'+reviewCount+'</strong></div>'+
+        '<div class="adm-stat-box"><span class="adm-stat-label">Pipeline Total</span><strong class="adm-stat-num">'+fmt(pipelineTotal)+'</strong></div>'+
+      '</div>'+
+      '<div class="adm-filter-bar">'+
+        '<input type="text" class="adm-search-input" id="admSearchInput" placeholder="Buscar noivos, data, local..." value="'+esc(ADM.search)+'">'+
+        '<button type="button" class="adm-pill-filter '+(ADM.filter==='all'?'on':'')+'" data-adm-filter="all">Todos ('+ADM.leads.length+')</button>'+
+        '<button type="button" class="adm-pill-filter '+(ADM.filter==='wa'?'on':'')+'" data-adm-filter="wa">🟢 WhatsApp ('+sentCount+')</button>'+
+        '<button type="button" class="adm-pill-filter '+(ADM.filter==='review'?'on':'')+'" data-adm-filter="review">🟡 Revisados ('+reviewCount+')</button>'+
+        '<button type="button" class="adm-btn-sm" data-adm-act="refresh-leads" title="Atualizar lista">↻ Atualizar</button>'+
+      '</div>'+
+      '<div id="admLeadsContainer">'+
+      (filteredLeads.length === 0 ? '<p class="lead" style="text-align:center;padding:32px 0;color:var(--muted)">Nenhum orçamento encontrado.</p>' :
+      filteredLeads.map(function(lead){
+        var isExp = ADM.expandedId === lead.id;
+        var waMsgUrl = 'https://wa.me/?text=' + encodeURIComponent('Olá, ' + (lead.clientName || 'noivos') + '! Aqui é o Wanderson Miranda. Vi suas escolhas de orçamento para o casamento em ' + (fmtDate(lead.date) || 'sua data') + '. Gostaria de tirar alguma dúvida ou reservar a data?');
+        var paySummary = '';
+        if(lead.pay){
+          if(lead.pay.method === 'avista') paySummary = 'À vista (5% desc)';
+          else if(lead.pay.method === 'cartao') paySummary = 'Cartão de crédito';
+          else paySummary = (lead.pay.installments || 1) + 'x mensais de ' + fmt(lead.pay.monthly || 0);
+        }
+        var extrasList = (lead.extras && lead.extras.length) ? lead.extras.map(function(e){ return '• ' + e.name + ' (' + fmt(e.price) + ')'; }).join('<br>') : 'Nenhum adicional selecionado';
+
+        return '<div class="adm-lead-card">'+
+          '<div class="adm-lead-top">'+
+            '<div class="adm-lead-name">👰🤵 '+esc(lead.clientName || 'Noivos')+'</div>'+
+            (lead.waSent ?
+              '<span class="adm-status-tag sent">🟢 Enviou WhatsApp</span>' :
+              '<span class="adm-status-tag review" title="Salvo automaticamente quando o cliente clicou em Revisar">🟡 Parou na Revisão</span>')+
+          '</div>'+
+          '<div class="adm-lead-grid">'+
+            '<div><span>Data do Casamento</span><strong>'+(fmtDate(lead.date) || 'A definir')+(lead.time ? ' às '+esc(lead.time) : '')+'</strong></div>'+
+            '<div><span>Local</span><strong>'+esc(lead.place || 'Não informado')+'</strong></div>'+
+            '<div><span>Pacote Base</span><strong>'+esc(lead.pkg ? lead.pkg.name : '-')+' ('+fmt(lead.pkg ? lead.pkg.price : 0)+')</strong></div>'+
+            '<div><span>Investimento Total</span><strong style="color:var(--accent);font-size:1.05rem">'+fmt(lead.total || 0)+'</strong></div>'+
+            '<div><span>Pagamento</span><strong>'+esc(paySummary)+'</strong></div>'+
+            '<div><span>Salvo em</span><span style="color:var(--muted);font-size:.78rem;text-transform:none;letter-spacing:0">'+fmtRelTime(lead.createdAt || lead.updatedAt)+'</span></div>'+
+          '</div>'+
+          (isExp ?
+            '<div class="adm-lead-details">'+
+              '<div><strong style="color:var(--ink)">Extras & Álbuns:</strong><div style="margin-top:4px;color:var(--muted)">'+extrasList+'</div></div>'+
+              (lead.notes ? '<div><strong style="color:var(--ink)">Observações dos noivos:</strong><p style="margin:4px 0 0;color:var(--muted)">'+esc(lead.notes)+'</p></div>' : '')+
+              (lead.pay && lead.pay.text ? '<div><strong style="color:var(--ink)">Condições de Pagamento:</strong><p style="margin:4px 0 0;color:var(--muted)">'+esc(lead.pay.text.replace(/\*/g,''))+'</p></div>' : '')+
+              '<div><strong style="color:var(--ink)">Texto Completo da Proposta:</strong>'+
+                '<textarea readonly style="width:100%;font-size:.78rem;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:8px;min-height:90px;margin-top:4px">'+esc(lead.message || '')+'</textarea>'+
+              '</div>'+
+            '</div>' : '')+
+          '<div class="adm-lead-actions">'+
+            '<button type="button" class="adm-btn-sm" data-adm-toggle="'+lead.id+'">'+(isExp ? '▲ Menos detalhes' : '▼ Ver detalhes')+'</button>'+
+            '<a class="adm-btn-sm primary" href="'+waMsgUrl+'" target="_blank" rel="noopener">Abrir WhatsApp</a>'+
+            '<button type="button" class="adm-btn-sm" data-adm-copy="'+lead.id+'">Copiar Proposta</button>'+
+            '<button type="button" class="adm-btn-sm danger" data-adm-del="'+lead.id+'">Excluir</button>'+
+          '</div>'+
+        '</div>';
+      }).join(''))+
+      '</div>';
+    } else {
+      // Tab 2: Configuração de Pacotes e Serviços
+      if(!ADM.editingPkgs) ADM.editingPkgs = JSON.parse(JSON.stringify(PKGS));
+      if(!ADM.editingExtras) ADM.editingExtras = JSON.parse(JSON.stringify(EXTRAS));
+
+      var mediaExtras = ADM.editingExtras.filter(function(e){ return e.g === 'media'; });
+      var albumExtras = ADM.editingExtras.filter(function(e){ return e.g === 'album'; });
+
+      tabContent = '<div style="background:var(--accent-soft);border:1px solid rgba(203,167,110,.3);border-radius:10px;padding:12px 16px;margin-bottom:18px;font-size:.85rem;color:var(--ink)">'+
+        '💡 <strong>Edição em tempo real:</strong> Qualquer alteração em nomes, descrições ou preços feita aqui atualiza automaticamente o catálogo para todos os noivos que entrarem no site.'+
+      '</div>'+
+      '<div class="adm-sec">'+
+        '<div class="adm-sec-head">'+
+          '<h3>1. Pacotes Principais de Casamento ('+ADM.editingPkgs.length+')</h3>'+
+          '<button type="button" class="adm-btn-sm primary" data-adm-act="add-pkg">+ Adicionar Pacote</button>'+
+        '</div>'+
+        ADM.editingPkgs.map(function(p, pIdx){
+          var itemsStr = Array.isArray(p.items) ? p.items.join('\n') : '';
+          return '<div class="adm-item-card">'+
+            '<div class="adm-item-row">'+
+              '<div><label>Nome do Pacote</label><input type="text" data-pkg-field="name" data-pkg-idx="'+pIdx+'" value="'+esc(p.name)+'"></div>'+
+              '<div><label>Preço (R$)</label><input type="number" step="0.01" data-pkg-field="price" data-pkg-idx="'+pIdx+'" value="'+p.price+'"></div>'+
+            '</div>'+
+            '<div class="adm-item-row">'+
+              '<div><label>Resumo Curto</label><input type="text" data-pkg-field="short" data-pkg-idx="'+pIdx+'" value="'+esc(p.short||'')+'"></div>'+
+              '<div><label>Tag (ex: Destaque)</label><input type="text" data-pkg-field="tag" data-pkg-idx="'+pIdx+'" value="'+esc(p.tag||'')+'"></div>'+
+            '</div>'+
+            '<div><label>Álbum incluído no pacote (opcional)</label><input type="text" data-pkg-field="album" data-pkg-idx="'+pIdx+'" placeholder="Ex: Álbum 20x30" value="'+esc(p.album||'')+'"></div>'+
+            '<div><label>Itens inclusos (1 por linha)</label><textarea data-pkg-field="items" data-pkg-idx="'+pIdx+'" placeholder="Um item por linha">'+esc(itemsStr)+'</textarea></div>'+
+            '<div class="adm-item-actions">'+
+              '<span style="font-size:.75rem;color:var(--muted)">Identificador: <code>'+esc(p.id)+'</code></span>'+
+              '<button type="button" class="adm-btn-sm danger" data-adm-act="del-pkg" data-pkg-idx="'+pIdx+'">Excluir pacote</button>'+
+            '</div>'+
+          '</div>';
+        }).join('')+
+      '</div>'+
+      '<div class="adm-sec">'+
+        '<div class="adm-sec-head">'+
+          '<h3>2. Serviços Extras e Filmagem ('+mediaExtras.length+')</h3>'+
+          '<button type="button" class="adm-btn-sm primary" data-adm-act="add-extra" data-extra-group="media">+ Adicionar Extra</button>'+
+        '</div>'+
+        ADM.editingExtras.map(function(e, eIdx){
+          if(e.g !== 'media') return '';
+          return '<div class="adm-item-card">'+
+            '<div class="adm-item-row">'+
+              '<div><label>Nome do Serviço</label><input type="text" data-ex-field="name" data-ex-idx="'+eIdx+'" value="'+esc(e.name)+'"></div>'+
+              '<div><label>Preço (R$)</label><input type="number" step="0.01" data-ex-field="price" data-ex-idx="'+eIdx+'" value="'+e.price+'"></div>'+
+            '</div>'+
+            '<div><label>Descrição do Serviço</label><input type="text" data-ex-field="desc" data-ex-idx="'+eIdx+'" value="'+esc(e.desc||'')+'"></div>'+
+            '<div class="adm-item-actions">'+
+              '<span style="font-size:.75rem;color:var(--muted)">ID: <code>'+esc(e.id)+'</code></span>'+
+              '<button type="button" class="adm-btn-sm danger" data-adm-act="del-extra" data-ex-idx="'+eIdx+'">Excluir item</button>'+
+            '</div>'+
+          '</div>';
+        }).join('')+
+      '</div>'+
+      '<div class="adm-sec">'+
+        '<div class="adm-sec-head">'+
+          '<h3>3. Modelos de Álbuns Adicionais ('+albumExtras.length+')</h3>'+
+          '<button type="button" class="adm-btn-sm primary" data-adm-act="add-extra" data-extra-group="album">+ Adicionar Álbum</button>'+
+        '</div>'+
+        ADM.editingExtras.map(function(e, eIdx){
+          if(e.g !== 'album') return '';
+          return '<div class="adm-item-card">'+
+            '<div class="adm-item-row">'+
+              '<div><label>Nome da Linha de Álbum</label><input type="text" data-ex-field="name" data-ex-idx="'+eIdx+'" value="'+esc(e.name)+'"></div>'+
+              '<div><label>Preço (R$)</label><input type="number" step="0.01" data-ex-field="price" data-ex-idx="'+eIdx+'" value="'+e.price+'"></div>'+
+            '</div>'+
+            '<div><label>Detalhes (dimensões, páginas, fotos)</label><input type="text" data-ex-field="desc" data-ex-idx="'+eIdx+'" value="'+esc(e.desc||'')+'"></div>'+
+            '<div class="adm-item-actions">'+
+              '<span style="font-size:.75rem;color:var(--muted)">ID: <code>'+esc(e.id)+'</code></span>'+
+              '<button type="button" class="adm-btn-sm danger" data-adm-act="del-extra" data-ex-idx="'+eIdx+'">Excluir álbum</button>'+
+            '</div>'+
+          '</div>';
+        }).join('')+
+      '</div>'+
+      '<div class="adm-save-bar">'+
+        '<button type="button" class="adm-btn-sm danger" data-adm-act="reset-config">↺ Restaurar Catálogo Original</button>'+
+        '<button type="button" class="btn send" data-adm-act="save-config" style="padding:10px 24px">💾 Salvar Alterações no Catálogo</button>'+
+      '</div>';
+    }
+
+    return '<div class="adm-dash">'+
+      '<div class="sheet-top">'+
+        '<button class="link-btn" type="button" data-s="menu">← Menu</button>'+
+        '<div style="display:flex;align-items:center;gap:10px">'+
+          '<span class="adm-user-tag">👤 Wmsouza</span>'+
+          '<button class="adm-logout-btn" type="button" data-adm-act="logout">Sair</button>'+
+          '<button class="menu-btn" type="button" data-s="close" id="sheetClose">Fechar</button>'+
+        '</div>'+
+      '</div>'+
+      '<div class="adm-head">'+
+        '<div><span class="eyebrow">Painel do Fotógrafo</span><h2 style="margin:4px 0 0">Gestão de Orçamentos</h2></div>'+
+        '<div class="adm-tabs">'+
+          '<button type="button" class="adm-tab '+(ADM.tab==='leads'?'on':'')+'" data-adm-tab="leads">📋 Orçamentos Salvos <span class="adm-badge">'+ADM.leads.length+'</span></button>'+
+          '<button type="button" class="adm-tab '+(ADM.tab==='config'?'on':'')+'" data-adm-tab="config">⚙️ Pacotes & Serviços</button>'+
+        '</div>'+
+      '</div>'+
+      tabContent+
+    '</div>';
+  }
+
   var toastTimer=null;
   function showToast(msg){
     var el=$('#toast');
@@ -778,6 +1287,7 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
         '<span>Restante: <strong>'+pl.n+'x de '+cf(pl.baseC)+'</strong>'+(pl.lastC!==pl.baseC?' (última de '+cf(pl.lastC)+')':'')+(pl.dl?' até '+dstr(pl.dl):'')+'</span>'+
         '<span style="font-size:.74rem;color:var(--muted)">Regra de no mínimo R$ 300 por parcela respeitada.</span>';
     }
+    updateLeadCurrentState();
   }
 
   $('#view').addEventListener('change',function(e){
@@ -786,6 +1296,7 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
       S.pay=t.value;
       var mb2=$('#msgbox'); if(mb2) mb2.value=buildMsg();
       var wa=$('#waBtn'); if(wa) wa.href='https://wa.me/'+WA+'?text='+encodeURIComponent(buildMsg());
+      updateLeadCurrentState();
       render(false);
       return;
     }
@@ -846,11 +1357,14 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
     if(e.target.closest('[data-act="start"]')) go(0);
   });
   $('#bar').addEventListener('click',function(e){
+    var waLink = e.target.closest('a[href*="wa.me"]');
+    if(waLink) markLeadWhatsAppSent();
     var b=e.target.closest('[data-act]'); if(!b) return;
     if(b.dataset.act==='back') go(S.step-1);
     else if(b.dataset.act==='next'){
       if(S.step===0 && !S.pkg) return;
       if(S.step===3 && !validate()) return;
+      if(S.step===3) saveLeadOnReview();
       go(S.step+1);
     }
   });
@@ -880,7 +1394,15 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
         '<button type="button" data-s="home">Início<span>Montar orçamento</span></button>'+
         '<button type="button" data-s="faq">Dúvidas frequentes</button>'+
         '<button type="button" data-s="about">O fotógrafo</button>'+
-        '<button type="button" data-s="contact">Contato</button></nav>';
+        '<button type="button" data-s="contact">Contato</button>'+
+        '<button type="button" class="nav-admin" data-s="admin">'+
+          '<div class="nav-admin-left">'+
+            '<span>Área do Fotógrafo</span>'+
+            '<small>Gestão de orçamentos e catálogo</small>'+
+          '</div>'+
+          '<span class="nav-admin-badge"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> Wmsouza</span>'+
+        '</button>'+
+      '</nav>';
     } else if(view==='faq'){
       h=sheetHead(true)+'<h2 style="margin-bottom:18px">Dúvidas frequentes</h2><div class="faq">'+FAQ.map(function(q){ return '<details><summary>'+q[0]+'</summary><p>'+q[1]+'</p></details>'; }).join('')+'</div>';
     } else if(view==='about'){
@@ -891,6 +1413,12 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
         '<div><small>E-mail</small><span class="val">wmphotoevideo@gmail.com</span></div>'+
         '<div><small>Instagram</small><a href="https://www.instagram.com/wandersonmirandafoto" target="_blank" rel="noopener">@wandersonmirandafoto</a></div>'+
         '<div><small>Site</small><a href="https://www.wandersonmiranda.com.br" target="_blank" rel="noopener">www.wandersonmiranda.com.br</a></div></div>';
+    } else if(view==='admin'){
+      if(!isAdminAuth()){
+        h=renderAdminLogin();
+      } else {
+        h=renderAdminDash();
+      }
     }
     sheet.innerHTML='<div class="sheet-in">'+h+'</div>';
     if(sheet.hidden){ lastFocus=document.activeElement; sheet.hidden=false; document.body.style.overflow='hidden'; }
@@ -900,15 +1428,302 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
   function closeSheet(){ sheet.hidden=true; document.body.style.overflow=''; if(lastFocus&&lastFocus.focus) lastFocus.focus(); }
   $('#menuBtn').addEventListener('click',function(){ openSheet('menu'); });
   $('#brandHome').addEventListener('click',function(){ if(S.step!==-1) go(-1); else window.scrollTo({top:0}); });
-  sheet.addEventListener('click',function(e){
-    var b=e.target.closest('[data-s]'); if(!b) return;
-    var a=b.dataset.s;
-    if(a==='close') closeSheet();
-    else if(a==='home'){ closeSheet(); if(S.step!==-1) go(-1); }
-    else openSheet(a);
+  
+  function handleAdminLogin(form){
+    var uEl = form.querySelector('#admUser'), pEl = form.querySelector('#admPass'), errEl = form.querySelector('#admLoginErr');
+    if(!uEl || !pEl) return;
+    var u = (uEl.value || '').trim();
+    var p = pEl.value || '';
+    if(u.toLowerCase() === 'wmsouza' && p === 'Wmsouza201099'){
+      setAdminAuth(true);
+      fetchLeads(function(){
+        openSheet('admin');
+        showToast('Bem-vindo, Wanderson!');
+      });
+    } else {
+      if(errEl) errEl.hidden = false;
+      pEl.focus();
+    }
+  }
+
+  sheet.addEventListener('submit',function(e){
+    if(e.target.id === 'admLoginForm'){
+      e.preventDefault();
+      handleAdminLogin(e.target);
+    }
   });
+
+  sheet.addEventListener('input',function(e){
+    if(e.target.id === 'admSearchInput'){
+      ADM.search = e.target.value;
+      var container = $('#admLeadsContainer');
+      if(container){
+        var sentCount = ADM.leads.filter(function(l){ return l.waSent; }).length;
+        var reviewCount = ADM.leads.filter(function(l){ return !l.waSent; }).length;
+        var filteredLeads = ADM.leads.filter(function(l){
+          if(ADM.filter === 'wa' && !l.waSent) return false;
+          if(ADM.filter === 'review' && l.waSent) return false;
+          if(ADM.search.trim()){
+            var q = ADM.search.toLowerCase();
+            var matchName = (l.clientName || '').toLowerCase().indexOf(q) > -1;
+            var matchDate = (l.date || '').toLowerCase().indexOf(q) > -1;
+            var matchPlace = (l.place || '').toLowerCase().indexOf(q) > -1;
+            var matchPkg = (l.pkg && l.pkg.name ? l.pkg.name : '').toLowerCase().indexOf(q) > -1;
+            if(!matchName && !matchDate && !matchPlace && !matchPkg) return false;
+          }
+          return true;
+        });
+        container.innerHTML = filteredLeads.length === 0 ? '<p class="lead" style="text-align:center;padding:32px 0;color:var(--muted)">Nenhum orçamento encontrado.</p>' :
+        filteredLeads.map(function(lead){
+          var isExp = ADM.expandedId === lead.id;
+          var waMsgUrl = 'https://wa.me/?text=' + encodeURIComponent('Olá, ' + (lead.clientName || 'noivos') + '! Aqui é o Wanderson Miranda. Vi suas escolhas de orçamento para o casamento em ' + (fmtDate(lead.date) || 'sua data') + '. Gostaria de tirar alguma dúvida ou reservar a data?');
+          var paySummary = '';
+          if(lead.pay){
+            if(lead.pay.method === 'avista') paySummary = 'À vista (5% desc)';
+            else if(lead.pay.method === 'cartao') paySummary = 'Cartão de crédito';
+            else paySummary = (lead.pay.installments || 1) + 'x mensais de ' + fmt(lead.pay.monthly || 0);
+          }
+          var extrasList = (lead.extras && lead.extras.length) ? lead.extras.map(function(e){ return '• ' + e.name + ' (' + fmt(e.price) + ')'; }).join('<br>') : 'Nenhum adicional selecionado';
+
+          return '<div class="adm-lead-card">'+
+            '<div class="adm-lead-top">'+
+              '<div class="adm-lead-name">👰🤵 '+esc(lead.clientName || 'Noivos')+'</div>'+
+              (lead.waSent ?
+                '<span class="adm-status-tag sent">🟢 Enviou WhatsApp</span>' :
+                '<span class="adm-status-tag review" title="Salvo automaticamente quando o cliente clicou em Revisar">🟡 Parou na Revisão</span>')+
+            '</div>'+
+            '<div class="adm-lead-grid">'+
+              '<div><span>Data do Casamento</span><strong>'+(fmtDate(lead.date) || 'A definir')+(lead.time ? ' às '+esc(lead.time) : '')+'</strong></div>'+
+              '<div><span>Local</span><strong>'+esc(lead.place || 'Não informado')+'</strong></div>'+
+              '<div><span>Pacote Base</span><strong>'+esc(lead.pkg ? lead.pkg.name : '-')+' ('+fmt(lead.pkg ? lead.pkg.price : 0)+')</strong></div>'+
+              '<div><span>Investimento Total</span><strong style="color:var(--accent);font-size:1.05rem">'+fmt(lead.total || 0)+'</strong></div>'+
+              '<div><span>Pagamento</span><strong>'+esc(paySummary)+'</strong></div>'+
+              '<div><span>Salvo em</span><span style="color:var(--muted);font-size:.78rem;text-transform:none;letter-spacing:0">'+fmtRelTime(lead.createdAt || lead.updatedAt)+'</span></div>'+
+            '</div>'+
+            (isExp ?
+              '<div class="adm-lead-details">'+
+                '<div><strong style="color:var(--ink)">Extras & Álbuns:</strong><div style="margin-top:4px;color:var(--muted)">'+extrasList+'</div></div>'+
+                (lead.notes ? '<div><strong style="color:var(--ink)">Observações dos noivos:</strong><p style="margin:4px 0 0;color:var(--muted)">'+esc(lead.notes)+'</p></div>' : '')+
+                (lead.pay && lead.pay.text ? '<div><strong style="color:var(--ink)">Condições de Pagamento:</strong><p style="margin:4px 0 0;color:var(--muted)">'+esc(lead.pay.text.replace(/\*/g,''))+'</p></div>' : '')+
+                '<div><strong style="color:var(--ink)">Texto Completo da Proposta:</strong>'+
+                  '<textarea readonly style="width:100%;font-size:.78rem;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:8px;min-height:90px;margin-top:4px">'+esc(lead.message || '')+'</textarea>'+
+                '</div>'+
+              '</div>' : '')+
+            '<div class="adm-lead-actions">'+
+              '<button type="button" class="adm-btn-sm" data-adm-toggle="'+lead.id+'">'+(isExp ? '▲ Menos detalhes' : '▼ Ver detalhes')+'</button>'+
+              '<a class="adm-btn-sm primary" href="'+waMsgUrl+'" target="_blank" rel="noopener">Abrir WhatsApp</a>'+
+              '<button type="button" class="adm-btn-sm" data-adm-copy="'+lead.id+'">Copiar Proposta</button>'+
+              '<button type="button" class="adm-btn-sm danger" data-adm-del="'+lead.id+'">Excluir</button>'+
+            '</div>'+
+          '</div>';
+        }).join('');
+      }
+    }
+  });
+
+  sheet.addEventListener('click',function(e){
+    var b=e.target.closest('[data-s]');
+    if(b){
+      var a=b.dataset.s;
+      if(a==='close') closeSheet();
+      else if(a==='home'){ closeSheet(); if(S.step!==-1) go(-1); }
+      else if(a==='admin'){
+        if(isAdminAuth()){
+          fetchLeads(function(){ openSheet('admin'); });
+        } else {
+          openSheet('admin');
+        }
+      }
+      else openSheet(a);
+      return;
+    }
+
+    /* Admin Tab switcher */
+    var tbtn = e.target.closest('[data-adm-tab]');
+    if(tbtn){
+      syncEditingPkgsFromDom();
+      ADM.tab = tbtn.dataset.admTab;
+      if(ADM.tab === 'leads'){
+        fetchLeads(function(){ openSheet('admin'); });
+      } else {
+        ADM.editingPkgs = JSON.parse(JSON.stringify(PKGS));
+        ADM.editingExtras = JSON.parse(JSON.stringify(EXTRAS));
+        openSheet('admin');
+      }
+      return;
+    }
+
+    /* Admin Filter pills */
+    var fbtn = e.target.closest('[data-adm-filter]');
+    if(fbtn){
+      ADM.filter = fbtn.dataset.admFilter;
+      openSheet('admin');
+      return;
+    }
+
+    /* Admin Refresh */
+    if(e.target.closest('[data-adm-act="refresh-leads"]')){
+      fetchLeads(function(){
+        showToast('Lista de orçamentos atualizada.');
+        openSheet('admin');
+      });
+      return;
+    }
+
+    /* Admin Logout */
+    if(e.target.closest('[data-adm-act="logout"]')){
+      setAdminAuth(false);
+      showToast('Sessão encerrada.');
+      openSheet('menu');
+      return;
+    }
+
+    /* Admin Toggle details */
+    var togBtn = e.target.closest('[data-adm-toggle]');
+    if(togBtn){
+      var id = togBtn.dataset.admToggle;
+      ADM.expandedId = ADM.expandedId === id ? null : id;
+      openSheet('admin');
+      return;
+    }
+
+    /* Admin Copy lead proposal */
+    var cpBtn = e.target.closest('[data-adm-copy]');
+    if(cpBtn){
+      var leadId = cpBtn.dataset.admCopy;
+      var found = ADM.leads.find(function(l){ return l.id === leadId; });
+      if(found && found.message){
+        navigator.clipboard.writeText(found.message).then(function(){
+          showToast('Proposta copiada com sucesso!');
+        });
+      }
+      return;
+    }
+
+    /* Admin Delete lead */
+    var delBtn = e.target.closest('[data-adm-del]');
+    if(delBtn){
+      var dId = delBtn.dataset.admDel;
+      if(confirm('Tem certeza de que deseja excluir este orçamento salvo?')){
+        fetch('/api/leads/' + dId, { method: 'DELETE' })
+          .then(function(){
+            ADM.leads = ADM.leads.filter(function(l){ return l.id !== dId; });
+            showToast('Orçamento excluído.');
+            openSheet('admin');
+          });
+      }
+      return;
+    }
+
+    /* Admin Add Package */
+    if(e.target.closest('[data-adm-act="add-pkg"]')){
+      syncEditingPkgsFromDom();
+      var newPkgId = 'pkg_' + Date.now();
+      ADM.editingPkgs.push({
+        id: newPkgId,
+        name: 'Novo Pacote',
+        price: 2500,
+        short: 'Até 7h de cobertura · Fotografia',
+        inc: [],
+        items: ['Até 7h de cobertura', '1 fotógrafo', 'Fotos editadas', 'Galeria online']
+      });
+      openSheet('admin');
+      return;
+    }
+
+    /* Admin Delete Package */
+    var delPkgBtn = e.target.closest('[data-adm-act="del-pkg"]');
+    if(delPkgBtn){
+      syncEditingPkgsFromDom();
+      var pIdx = parseInt(delPkgBtn.dataset.pkgIdx, 10);
+      if(ADM.editingPkgs.length <= 1){
+        alert('É necessário manter ao menos 1 pacote de casamento.');
+        return;
+      }
+      if(confirm('Deseja excluir o pacote "' + ADM.editingPkgs[pIdx].name + '"?')){
+        ADM.editingPkgs.splice(pIdx, 1);
+        openSheet('admin');
+      }
+      return;
+    }
+
+    /* Admin Add Extra */
+    var addExBtn = e.target.closest('[data-adm-act="add-extra"]');
+    if(addExBtn){
+      syncEditingPkgsFromDom();
+      var grp = addExBtn.dataset.extraGroup || 'media';
+      var newExId = (grp==='album' ? 'al_' : 'ex_') + Date.now();
+      ADM.editingExtras.push({
+        id: newExId,
+        g: grp,
+        name: grp === 'album' ? 'Novo Álbum' : 'Novo Serviço',
+        desc: grp === 'album' ? '25x50 cm · 40 páginas · até 80 fotos' : 'Descrição do serviço extra',
+        price: 500
+      });
+      openSheet('admin');
+      return;
+    }
+
+    /* Admin Delete Extra */
+    var delExBtn = e.target.closest('[data-adm-act="del-extra"]');
+    if(delExBtn){
+      syncEditingPkgsFromDom();
+      var eIdx = parseInt(delExBtn.dataset.exIdx, 10);
+      if(confirm('Deseja excluir este item?')){
+        ADM.editingExtras.splice(eIdx, 1);
+        openSheet('admin');
+      }
+      return;
+    }
+
+    /* Admin Save Config */
+    if(e.target.closest('[data-adm-act="save-config"]')){
+      syncEditingPkgsFromDom();
+      fetch('/api/config', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ packages: ADM.editingPkgs, extras: ADM.editingExtras })
+      })
+      .then(function(r){ return r.json(); })
+      .then(function(res){
+        if(res && res.ok){
+          PKGS = JSON.parse(JSON.stringify(ADM.editingPkgs));
+          EXTRAS = JSON.parse(JSON.stringify(ADM.editingExtras));
+          ALBUMS3 = EXTRAS.filter(function(x){ return x.g === 'album'; }).map(function(x){ return x.id; });
+          showToast('Catálogo atualizado com sucesso! Alterações salvas.');
+          if(S.step >= 0) render(false);
+          openSheet('admin');
+        } else {
+          showToast('Erro ao salvar alterações no catálogo.');
+        }
+      })
+      .catch(function(){ showToast('Erro de conexão ao salvar.'); });
+      return;
+    }
+
+    /* Admin Reset Config */
+    if(e.target.closest('[data-adm-act="reset-config"]')){
+      if(confirm('Deseja realmente restaurar os pacotes e extras originais de fábrica?')){
+        fetch('/api/config/reset', { method: 'POST' })
+          .then(function(){
+            PKGS = JSON.parse(JSON.stringify(DEFAULT_PKGS));
+            EXTRAS = JSON.parse(JSON.stringify(DEFAULT_EXTRAS));
+            ALBUMS3 = ['al_essencial','al_premium','al_luxo'];
+            ADM.editingPkgs = JSON.parse(JSON.stringify(DEFAULT_PKGS));
+            ADM.editingExtras = JSON.parse(JSON.stringify(DEFAULT_EXTRAS));
+            showToast('Catálogo restaurado para o padrão original.');
+            if(S.step >= 0) render(false);
+            openSheet('admin');
+          })
+          .catch(function(){ showToast('Erro ao restaurar catálogo.'); });
+      }
+      return;
+    }
+  });
+
   document.addEventListener('keydown',function(e){ if(e.key==='Escape' && !sheet.hidden) closeSheet(); });
 
+  loadConfig();
   render(false);
 })();
 </script>

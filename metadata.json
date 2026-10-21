@@ -1,0 +1,8 @@
+{
+  "name": "Orçamento Wanderson Miranda",
+  "description": "Sistema interativo de orçamento para fotografia e filmagem de casamentos por Wanderson Miranda.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
