@@ -5,9 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Orçamento Wanderson Miranda</title>
   <meta name="description" content="Sistema interativo de orçamento para fotografia e filmagem de casamentos por Wanderson Miranda.">
-  <meta property="og:title" content="Orçamento Wanderson Miranda">
-  <meta property="og:description" content="Sistema interativo de orçamento para fotografia e filmagem de casamentos por Wanderson Miranda.">
-  <link rel="icon" type="image/png" href="/logo.png">
+  <meta property="og:site_name" content="Wanderson Miranda Fotografia">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Orçamento Wanderson Miranda Fotografia">
+  <meta property="og:description" content="Monte seu pacote personalizado para fotografia e filmagem de casamento. Calcule valores, veja álbuns e parcelamento na hora.">
+  <meta property="og:image" content="/og-image.jpg">
+  <meta property="og:image:secure_url" content="/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Wanderson Miranda Fotografia">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Orçamento Wanderson Miranda Fotografia">
+  <meta name="twitter:description" content="Monte seu pacote personalizado para fotografia e filmagem de casamento.">
+  <meta name="twitter:image" content="/og-image.jpg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <meta name="claude:viewport-fit-sides" content="cover">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -227,6 +242,10 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
 
 .welcome{margin-block:0 auto;padding-top:34px;display:flex;flex-direction:column;align-items:flex-start;width:100%}
 @media (min-width:900px){.welcome{margin-block:auto;padding-top:0}}
+.welcome-brand{margin-top:32px;display:inline-flex;align-items:center}
+.welcome-logo-badge{height:44px;width:auto;border-radius:10px;border:1px solid rgba(203,167,110,.35);background:#0B0A09;padding:2px;box-shadow:0 8px 24px rgba(0,0,0,.35);display:block;transition:transform .2s ease}
+.welcome-logo-badge:hover{transform:scale(1.02)}
+@media (max-width:400px){.welcome-brand{margin-top:24px}.welcome-logo-badge{height:38px}}
 .eyebrow{font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent)}
 .welcome .eyebrow{display:flex;align-items:center;gap:18px;width:100%}
 .welcome .eyebrow::after{content:"";flex:1;height:1px;background:var(--accent);opacity:.7}
@@ -612,15 +631,15 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
   function fmt(n){ return Number.isInteger(n) ? BRL0.format(n) : BRL.format(n); }
 
   var DEFAULT_PKGS = [
-    {id:'luz', name:'Luz', price:1000, short:'Até 5h de cobertura · Fotografia', inc:[],
+    {id:'luz', name:'Luz', price:1000, short:'Até 5h de cobertura · Fotografia', inc:[], hasSecondPhotog:false,
      items:['Até 5h de cobertura','1 fotógrafo','Entrega online (link com todas as fotos)','Fotos editadas','Fotos ilimitadas']},
-    {id:'encanto', name:'Encanto', price:1599, short:'Até 7h de cobertura · Fotografia · Making of', inc:['making'],
+    {id:'encanto', name:'Encanto', price:1599, short:'Até 7h de cobertura · Fotografia · Making of', inc:['making'], hasSecondPhotog:false,
      items:['Até 7h de cobertura','1 fotógrafo','Entrega online (link com todas as fotos)','Fotos editadas','Making of']},
-    {id:'elegance', name:'Elegance', price:2290, short:'Até 7h · Fotografia · Making of · Pré-wedding', inc:['making','pre'],
+    {id:'elegance', name:'Elegance', price:2290, short:'Até 7h · Fotografia · Making of · Pré-wedding', inc:['making','pre'], hasSecondPhotog:false,
      items:['Até 7h de cobertura','1 fotógrafo','Entrega online (link com todas as fotos)','Fotos editadas','Making of','Pré-wedding']},
-    {id:'supremo', name:'Supremo', price:3590, short:'Até 7h · Fotografia · Making of · Pré-wedding · Álbum', inc:['making','pre','second'], album:'Álbum 20x30',
-     items:['Até 7h de cobertura','2 fotógrafos','Entrega online (link com todas as fotos)','Fotos editadas','Making of','Pré-wedding','Álbum 20x30']},
-    {id:'completo', name:'Completo', price:4790.99, tag:'Mais completo', short:'8h · Fotografia · Álbum · Filme completo e teaser', inc:['making','pre','second','pendrive','film'], album:'Álbum 30x60 com 40 páginas',
+    {id:'supremo', name:'Supremo', price:3590, short:'Até 7h · Fotografia · Making of · Pré-wedding · Álbum', inc:['making','pre'], album:'Álbum 20x30', hasSecondPhotog:false,
+     items:['Até 7h de cobertura','1 fotógrafo','Entrega online (link com todas as fotos)','Fotos editadas','Making of','Pré-wedding','Álbum 20x30']},
+    {id:'completo', name:'Completo', price:4790.99, tag:'Mais completo', short:'8h · Fotografia · Álbum · Filme completo e teaser', inc:['making','pre','second','pendrive','film'], album:'Álbum 30x60 com 40 páginas', hasSecondPhotog:true,
      items:['8 horas de fotos','Fotos de cerimônia e recepção','Making of (foto)','Pré-wedding (foto)','2 fotógrafos','Pendrive','Galeria online','Álbum 30x60 com 40 páginas','Filme completo','Teaser com os melhores momentos']}
   ];
 
@@ -647,7 +666,7 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
   var FAQ = [
     ['Quantas horas estão incluídas no serviço?','Nosso serviço padrão vai de 5 a 8 horas de cobertura, o que geralmente é suficiente para cobrir desde os preparativos até a festa. Chegamos 1h antes da cerimônia.'],
     ['Vocês oferecem sessão de pré-wedding (ensaio)?','Sim, oferecemos um ensaio externo que pode ser adicionado a qualquer pacote.'],
-    ['Quantos fotógrafos estarão presentes no dia?','Depende do pacote. Luz, Encanto e Elegance têm 1 fotógrafo. Supremo e Completo têm 2. Você também pode adicionar um segundo fotógrafo como extra.'],
+    ['Quantos fotógrafos estarão presentes no dia?','Depende do pacote. Luz, Encanto, Elegance e Supremo vêm com 1 fotógrafo (você pode incluir o 2º como extra). O pacote Completo já vem com 2 fotógrafos inclusos.'],
     ['Como funciona o pagamento?','Para reservar a data, peço a partir de R$ 400. O restante pode ser dividido em parcelas mensais, de no mínimo R$ 300 cada, até 20 dias antes do casamento. À vista, você tem 5% de desconto. Também aceito cartão de crédito, e a taxa é combinada comigo.'],
     ['Em quanto tempo recebo as fotos?','O prazo de entrega das fotos editadas é de 30 a 40 dias após a festa.'],
     ['Qual é o estilo das fotos?','Uma mistura de fotojornalismo e retratos criativos, capturando tanto os momentos espontâneos quanto as poses planejadas.'],
@@ -659,7 +678,52 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
   function esc(s){ return String(s).replace(/[&<>"']/g,function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
 
   function pkgObj(){ return PKGS.find(function(p){ return p.id===S.pkg; }); }
-  function isInc(id){ var p=pkgObj(); return !!p && p.inc.indexOf(id)>-1; }
+
+  function hasSecondPhotog(p){
+    if(!p) return false;
+    if(typeof p.hasSecondPhotog === 'boolean') return p.hasSecondPhotog;
+    var txt = ((p.short || '') + ' ' + (p.items || []).join(' ')).toLowerCase();
+    if(txt.indexOf('1 fotografo') > -1 || txt.indexOf('1 fotógrafo') > -1 || txt.indexOf('um fotógrafo') > -1 || txt.indexOf('apenas 1') > -1){
+      return false;
+    }
+    if(txt.indexOf('2 fotografo') > -1 || txt.indexOf('2 fotógrafo') > -1 || txt.indexOf('dois fotógrafo') > -1){
+      return true;
+    }
+    return Array.isArray(p.inc) && p.inc.indexOf('second') > -1;
+  }
+
+  function normalizePkgInc(p){
+    if(!p) return;
+    if(!Array.isArray(p.inc)) p.inc = [];
+    var has2 = hasSecondPhotog(p);
+    p.hasSecondPhotog = has2;
+    var idx = p.inc.indexOf('second');
+    if(has2 && idx === -1) p.inc.push('second');
+    else if(!has2 && idx > -1) p.inc.splice(idx, 1);
+  }
+
+  function isPkgAlbumExtra(p, extraOrId){
+    if(!p || !p.album) return false;
+    var extra = typeof extraOrId === 'string' ? EXTRAS.find(function(e){ return e.id === extraOrId; }) : extraOrId;
+    if(!extra || extra.g !== 'album') return false;
+    var pa = (p.album || '').toLowerCase().replace(/[\s\-_]/g,'');
+    var en = (extra.name || '').toLowerCase().replace(/[\s\-_]/g,'');
+    var ed = (extra.desc || '').toLowerCase().replace(/[\s\-_]/g,'');
+    if(pa === en) return true;
+    if(en.indexOf(pa) > -1 || pa.indexOf(en) > -1) return true;
+    var paDim = pa.match(/\d+x\d+/);
+    var edDim = (en + ed).match(/\d+x\d+/);
+    if(paDim && edDim && paDim[0] === edDim[0]) return true;
+    return false;
+  }
+
+  function isInc(id){
+    var p = pkgObj();
+    if(!p) return false;
+    if(id === 'second') return hasSecondPhotog(p);
+    if(isPkgAlbumExtra(p, id)) return true;
+    return !!p.inc && p.inc.indexOf(id) > -1;
+  }
   function paid(){ return EXTRAS.filter(function(e){ return S.ex.has(e.id) && !isInc(e.id); }); }
   function total(){ var p=pkgObj(); var t=(p?p.price:0)+paid().reduce(function(a,e){ return a+e.price; },0); return Math.round(t*100)/100; }
   function money(n){ return fmt(Math.round(n*100)/100); }
@@ -785,10 +849,11 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
     return '<div class="welcome">'+
       '<span class="eyebrow">Orçamento de casamento</span>'+
       '<h1 tabindex="-1">Cada momento<br>do seu grande dia,<br>eternizado com emoção.</h1>'+
-      '<p class="lead">Escolha o pacote, acrescente o que quiser e envie o pedido direto para o meu WhatsApp. Leva cerca de 2 minutos.</p>'+
+      '<p class="lead">Monte o seu pacote personalizado, acrescente o que quiser e envie o pedido direto para o meu WhatsApp. Leva cerca de 2 minutos.</p>'+
       '<button class="btn cta" type="button" data-act="start">'+
         '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.1 4C9.4 4 4 9.3 4 15.9c0 2.2.6 4.2 1.7 6L4 28l6.3-1.6c1.7.9 3.7 1.5 5.8 1.5 6.6 0 12-5.3 12-11.9S22.7 4 16.1 4z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M12.3 10.2c-.4 0-.9.2-1.2.6-.5.6-.9 1.4-.7 2.4.5 2.8 3.7 6.3 7.2 7.6 1 .4 1.9.1 2.5-.4.4-.3.6-.8.6-1.2l-.1-.5-2.1-1.1-.5.1-.9 1-.3-.1c-1.6-.7-2.9-2-3.6-3.6l-.1-.3.9-.9.1-.5-1-2.2z" fill="currentColor"/></svg>'+
-        '<span class="sep" aria-hidden="true"></span><span>Solicite seu orçamento</span><span class="arr" aria-hidden="true"></span></button>'+
+        '<span class="sep" aria-hidden="true"></span><span>Monte o seu Pacote</span><span class="arr" aria-hidden="true"></span></button>'+
+      '<div class="welcome-brand"><img src="/brand-badge.png" alt="Wanderson Miranda Fotografia" class="welcome-logo-badge" width="400" height="110"></div>'+
     '</div>';
   }
   function stepExtras(){
@@ -799,12 +864,87 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
     '<div class="list">'+EXTRAS.filter(function(e){return e.g==='media';}).map(row).join('')+'</div>';
   }
   function stepAlbums(){
-    var p=pkgObj();
-    return prog()+
-    '<div class="head"><h2 tabindex="-1">Álbuns</h2>'+
-    '<p class="lead">Guarde suas melhores fotos em um álbum impresso. Você escolhe as fotos depois da entrega. Se preferir, é só pular esta etapa.</p></div>'+
-    (p.album?'<p class="note">O pacote '+p.name+' já inclui '+p.album+'. Os álbuns abaixo são adicionais.</p>':'')+
-    '<div class="list">'+EXTRAS.filter(function(e){return e.g==='album';}).map(row).join('')+'</div>';
+    var p = pkgObj();
+    var hasIncAlbum = !!(p && p.album && p.album.trim());
+    var incAlbumName = hasIncAlbum ? p.album.trim() : '';
+
+    var matchedExtra = null;
+    if(hasIncAlbum){
+      matchedExtra = EXTRAS.find(function(e){
+        return e.g === 'album' && isPkgAlbumExtra(p, e);
+      });
+    }
+
+    var bannerHtml = '';
+    if(hasIncAlbum){
+      bannerHtml = '<div class="note" style="border-left:3px solid var(--accent);background:var(--accent-soft);padding:14px 16px;border-radius:8px;margin-bottom:16px;display:flex;flex-direction:column;gap:4px">' +
+        '<div style="display:flex;align-items:center;gap:8px;font-weight:600;color:var(--ink);font-size:.92rem">' +
+          '<span style="font-size:1.15rem">📖</span>' +
+          '<span>Seu pacote <strong>' + esc(p.name) + '</strong> já inclui: <strong>' + esc(incAlbumName) + '</strong></span>' +
+        '</div>' +
+        '<span style="font-size:.84rem;color:var(--muted)">Ele já está <strong>marcado como incluso</strong> abaixo sem custo adicional. Caso não deseje nenhum álbum extra (para os pais ou família), basta clicar em <strong>Continuar</strong>.</span>' +
+      '</div>';
+    } else {
+      bannerHtml = '<p class="lead" style="margin-bottom:16px">Guarde suas melhores fotos em um álbum impresso de alta qualidade. Você escolhe as fotos depois da entrega. Se preferir não incluir nenhum álbum agora, basta clicar em <strong>Continuar</strong>.</p>';
+    }
+
+    var albumCardsHtml = '';
+    if(hasIncAlbum && !matchedExtra){
+      albumCardsHtml += '<div class="card" style="border-color:var(--accent);background:rgba(203,167,110,.06)">' +
+        '<label class="row inc" style="cursor:default">' +
+          '<input type="checkbox" checked disabled>' +
+          '<span class="box" style="background:var(--accent);border-color:var(--accent)"></span>' +
+          '<span class="body">' +
+            '<span class="line">' +
+              '<span class="row-name" style="font-weight:600">✓ ' + esc(incAlbumName) + '</span>' +
+              '<span class="price" style="color:var(--accent);font-weight:600">Incluso no pacote</span>' +
+            '</span>' +
+            '<span class="row-desc" style="color:var(--ink)">Álbum impresso incluso no seu pacote ' + esc(p.name) + ' sem nenhum custo adicional.</span>' +
+          '</span>' +
+        '</label>' +
+      '</div>';
+    }
+
+    albumCardsHtml += EXTRAS.filter(function(e){ return e.g === 'album'; }).map(function(e){
+      var isThisInc = (matchedExtra && matchedExtra.id === e.id) || isInc(e.id);
+      if(isThisInc){
+        return '<div class="card" style="border-color:var(--accent);background:rgba(203,167,110,.06)">' +
+          '<label class="row inc" style="cursor:default">' +
+            '<input type="checkbox" checked disabled>' +
+            '<span class="box" style="background:var(--accent);border-color:var(--accent)"></span>' +
+            '<span class="body">' +
+              '<span class="line">' +
+                '<span class="row-name" style="font-weight:600">✓ ' + esc(e.name) + '</span>' +
+                '<span class="price" style="color:var(--accent);font-weight:600">Incluso no pacote</span>' +
+              '</span>' +
+              '<span class="row-desc" style="color:var(--ink)">' + esc(e.desc || '') + ' · Incluso no pacote ' + esc(p.name) + '</span>' +
+            '</span>' +
+          '</label>' +
+        '</div>';
+      }
+
+      var on = S.ex.has(e.id);
+      return '<div class="card">' +
+        '<label class="row">' +
+          '<input type="checkbox" data-ex="1" value="' + e.id + '"' + (on ? ' checked' : '') + '>' +
+          '<span class="box"></span>' +
+          '<span class="body">' +
+            '<span class="line">' +
+              '<span class="row-name">' + esc(e.name) + (hasIncAlbum ? ' <span style="font-size:.75rem;font-weight:500;color:var(--muted);text-transform:uppercase">(+1 Adicional)</span>' : '') + '</span>' +
+              '<span class="price">+ ' + fmt(e.price) + '</span>' +
+            '</span>' +
+            (e.desc ? '<span class="row-desc">' + esc(e.desc) + '</span>' : '') +
+          '</span>' +
+        '</label>' +
+      '</div>';
+    }).join('');
+
+    return prog() +
+      '<div class="head"><h2 tabindex="-1">Álbuns</h2>' +
+      (hasIncAlbum ? '<p class="lead">Confira o álbum incluso no seu pacote ou adicione álbuns adicionais se desejar.</p>' : '') +
+      '</div>' +
+      bannerHtml +
+      '<div class="list">' + albumCardsHtml + '</div>';
   }
   function hasAlbum(){ return EXTRAS.some(function(e){ return e.g==='album' && S.ex.has(e.id); }); }
 
@@ -835,6 +975,9 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
     L.push('');
     L.push('✨*PACOTE ESCOLHIDO*');
     L.push(p.name+' — '+BRL.format(p.price));
+    if(p.album){
+      L.push('📖 Álbum incluso: '+p.album);
+    }
     L.push('');
     L.push('*SERVIÇOS ADICIONAIS*');
     if(ex.length){
@@ -880,6 +1023,7 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
     '<div class="head"><h2 tabindex="-1">Confira seu pedido</h2><p class="lead">Se estiver tudo certo, toque em enviar. O WhatsApp abre com a mensagem pronta e você revisa antes de mandar.</p></div>'+
     '<dl class="sum">'+
       '<div class="sum-row"><dt>Pacote '+p.name+'</dt><dd>'+fmt(p.price)+'</dd></div>'+
+      (p.album?'<div class="sum-row" style="background:rgba(203,167,110,.08);padding:10px 12px;border-radius:8px"><dt style="color:var(--ink);font-weight:600">📖 Álbum incluso</dt><dd style="color:var(--accent);font-weight:600">'+esc(p.album)+' (Incluso)</dd></div>':'')+
       ex.map(function(e){ return '<div class="sum-row"><dt>'+e.name+'</dt><dd>+ '+fmt(e.price)+'</dd></div>'; }).join('')+
       '<div class="sum-row big"><dt>Investimento</dt><dd>'+fmt(t)+'</dd></div>'+
     '</dl>'+
@@ -1107,13 +1251,18 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
         var parsed = JSON.parse(cached);
         if(parsed && Array.isArray(parsed.packages) && parsed.packages.length > 0){
           PKGS = parsed.packages;
+          PKGS.forEach(normalizePkgInc);
         }
         if(parsed && Array.isArray(parsed.extras) && parsed.extras.length > 0){
           EXTRAS = parsed.extras;
           ALBUMS3 = EXTRAS.filter(function(e){ return e.g==='album'; }).map(function(e){ return e.id; });
         }
+      } else {
+        PKGS.forEach(normalizePkgInc);
       }
-    } catch(e){}
+    } catch(e){
+      PKGS.forEach(normalizePkgInc);
+    }
 
     // 2. Sincronização com o servidor
     fetch('/api/config')
@@ -1122,6 +1271,7 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
         var changed = false;
         if(cfg && Array.isArray(cfg.packages) && cfg.packages.length > 0){
           PKGS = cfg.packages;
+          PKGS.forEach(normalizePkgInc);
           changed = true;
           try {
             var curr = JSON.parse(localStorage.getItem('wm_catalog_config') || '{}');
@@ -1135,6 +1285,7 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
             if(localCfg){
               var pCfg = JSON.parse(localCfg);
               if(pCfg && Array.isArray(pCfg.packages) && pCfg.packages.length > 0){
+                pCfg.packages.forEach(normalizePkgInc);
                 fetch('/api/config', {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },
@@ -1259,6 +1410,15 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
         else ADM.editingPkgs[idx][field] = el.value;
       }
     });
+    document.querySelectorAll('[data-pkg-check]').forEach(function(el){
+      var idx = parseInt(el.dataset.pkgIdx, 10);
+      var checkField = el.dataset.pkgCheck;
+      if(ADM.editingPkgs[idx] !== undefined){
+        ADM.editingPkgs[idx][checkField] = el.checked;
+      }
+    });
+    ADM.editingPkgs.forEach(normalizePkgInc);
+
     document.querySelectorAll('[data-ex-field]').forEach(function(el){
       var idx = parseInt(el.dataset.exIdx, 10);
       var field = el.dataset.exField;
@@ -1414,7 +1574,18 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
               '<div><label>Resumo Curto</label><input type="text" data-pkg-field="short" data-pkg-idx="'+pIdx+'" value="'+esc(p.short||'')+'"></div>'+
               '<div><label>Tag em destaque (ex: Escolha Ideal, Mais Pedido)</label><input type="text" data-pkg-field="tag" data-pkg-idx="'+pIdx+'" value="'+esc(p.tag||'')+'"></div>'+
             '</div>'+
-            '<div><label>Álbum incluído no pacote (opcional)</label><input type="text" data-pkg-field="album" data-pkg-idx="'+pIdx+'" placeholder="Ex: Álbum 20x30" value="'+esc(p.album||'')+'"></div>'+
+            '<div>'+
+              '<label>Álbum incluído no pacote (opcional)</label>'+
+              '<input type="text" data-pkg-field="album" data-pkg-idx="'+pIdx+'" placeholder="Ex: Álbum 20x30" value="'+esc(p.album||'')+'">'+
+              '<small style="color:var(--muted);font-size:.75rem;display:block;margin-top:2px">💡 Este álbum aparecerá <strong>marcado como incluso</strong> na Etapa 3 para o cliente não adicionar outro por engano.</small>'+
+            '</div>'+
+            '<div class="adm-inc-box" style="background:rgba(203,167,110,.08);border:1px solid rgba(203,167,110,.25);border-radius:8px;padding:10px 14px;margin-top:4px;margin-bottom:4px">'+
+              '<label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-weight:600;font-size:.85rem;color:var(--ink);margin:0">'+
+                '<input type="checkbox" data-pkg-check="hasSecondPhotog" data-pkg-idx="'+pIdx+'" '+(hasSecondPhotog(p)?'checked':'')+' style="width:18px;height:18px;accent-color:var(--accent);cursor:pointer">'+
+                '<span>📸 Segundo fotógrafo incluso neste pacote</span>'+
+              '</label>'+
+              '<small style="color:var(--muted);font-size:.76rem;display:block;margin-top:3px;margin-left:28px">Deixe <strong>desmarcado</strong> (ou escreva "1 fotógrafo" nos itens abaixo) para oferecer o 2º fotógrafo como opcional na Etapa 2. Se marcar (ou escrever "2 fotógrafos"), ele será considerado incluso.</small>'+
+            '</div>'+
             '<div><label>Itens inclusos (1 por linha)</label><textarea data-pkg-field="items" data-pkg-idx="'+pIdx+'" placeholder="Um item por linha">'+esc(itemsStr)+'</textarea></div>'+
             '<div class="adm-item-actions">'+
               '<span style="font-size:.75rem;color:var(--muted)">Identificador: <code>'+esc(p.id)+'</code></span>'+
@@ -1850,6 +2021,57 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
         }).join('');
       }
     }
+    if(e.target.dataset && e.target.dataset.pkgField === 'items'){
+      var pIdx = parseInt(e.target.dataset.pkgIdx, 10);
+      var txt = e.target.value.toLowerCase();
+      var chk = sheet.querySelector('[data-pkg-check="hasSecondPhotog"][data-pkg-idx="'+pIdx+'"]');
+      if(chk){
+        if(txt.indexOf('1 fotografo') > -1 || txt.indexOf('1 fotógrafo') > -1 || txt.indexOf('um fotógrafo') > -1 || txt.indexOf('apenas 1') > -1){
+          chk.checked = false;
+          if(ADM.editingPkgs && ADM.editingPkgs[pIdx]){
+            ADM.editingPkgs[pIdx].hasSecondPhotog = false;
+            normalizePkgInc(ADM.editingPkgs[pIdx]);
+          }
+        } else if(txt.indexOf('2 fotografo') > -1 || txt.indexOf('2 fotógrafo') > -1 || txt.indexOf('dois fotógrafo') > -1){
+          chk.checked = true;
+          if(ADM.editingPkgs && ADM.editingPkgs[pIdx]){
+            ADM.editingPkgs[pIdx].hasSecondPhotog = true;
+            normalizePkgInc(ADM.editingPkgs[pIdx]);
+          }
+        }
+      }
+    }
+  });
+
+  sheet.addEventListener('change',function(e){
+    if(e.target.dataset && e.target.dataset.pkgCheck === 'hasSecondPhotog'){
+      syncEditingPkgsFromDom();
+      var pIdx = parseInt(e.target.dataset.pkgIdx, 10);
+      var checked = e.target.checked;
+      if(ADM.editingPkgs && ADM.editingPkgs[pIdx]){
+        ADM.editingPkgs[pIdx].hasSecondPhotog = checked;
+        normalizePkgInc(ADM.editingPkgs[pIdx]);
+        var itemsArea = sheet.querySelector('[data-pkg-field="items"][data-pkg-idx="'+pIdx+'"]');
+        if(itemsArea){
+          var lines = itemsArea.value.split('\n');
+          var found = false;
+          for(var i = 0; i < lines.length; i++){
+            var lineL = lines[i].toLowerCase();
+            if(checked && (lineL.indexOf('1 fotografo') > -1 || lineL.indexOf('1 fotógrafo') > -1)){
+              lines[i] = lines[i].replace(/1\s*fot[oó]grafo/i, '2 fotógrafos');
+              found = true;
+            } else if(!checked && (lineL.indexOf('2 fotografo') > -1 || lineL.indexOf('2 fotógrafos') > -1)){
+              lines[i] = lines[i].replace(/2\s*fot[oó]grafos?/i, '1 fotógrafo');
+              found = true;
+            }
+          }
+          if(found){
+            itemsArea.value = lines.join('\n');
+            ADM.editingPkgs[pIdx].items = lines.map(function(s){ return s.trim(); }).filter(Boolean);
+          }
+        }
+      }
+    }
   });
 
   sheet.addEventListener('click',function(e){
@@ -2008,6 +2230,8 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
         short: 'Até 7h de cobertura · Fotografia',
         tag: 'Novo',
         inc: [],
+        album: '',
+        hasSecondPhotog: false,
         items: ['Até 7h de cobertura', '1 fotógrafo', 'Fotos editadas', 'Galeria online']
       });
       openSheet('admin', { focusSelector: '[data-pkg-field="name"][data-pkg-idx="0"]' });
@@ -2100,6 +2324,7 @@ input:focus-visible+.dot,input:focus-visible+.box{outline:2px solid var(--accent
       }
 
       PKGS = JSON.parse(JSON.stringify(ADM.editingPkgs));
+      PKGS.forEach(normalizePkgInc);
       EXTRAS = JSON.parse(JSON.stringify(ADM.editingExtras));
       ALBUMS3 = EXTRAS.filter(function(x){ return x.g === 'album'; }).map(function(x){ return x.id; });
 
